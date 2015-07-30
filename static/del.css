@@ -1,0 +1,35 @@
+
+/****other ico****/
+
+.layHeader .icoHeadPoint {
+    background: url("/static/point-s.png") no-repeat 0 -2px;
+    width: 7px;
+    height: 5px;
+    vertical-align: top;
+}
+
+.icoCommentActPoint {
+    background: url("/static/point-s.png") no-repeat 0 -13px;
+    width: 9px;
+    height: 10px;
+    vertical-align: top;
+}
+
+.icoJokeCommentPoint {
+    background: url("/static/point-s.png") no-repeat 0 -24px;
+    width: 9px;
+    height: 10px;
+    vertical-align: top;
+}
+
+.feedbackLogin .systemTxtPoint {
+    background: url("/static/point-s.png") no-repeat 2px -33px;
+}
+
+.feedbackLogin .userTxtPoint {
+    background: url("/static/point-s.png") no-repeat 3px -60px;
+}
+
+.settingsContact .contactPoint {
+    background: url("/static/point-s.png") no-repeat 3px -85px;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--给出评论内容和所属blog-->
+<html xmlns="http://www.w3.org/1999/html">
+{% load i18n %}
+{% load staticfiles %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=http://www.zhiyin.cn/" -->
+    <!--写出PC页对应的手机页-->
+    <meta name="author" content="laiqun">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=no">
+    <!--bootstrap中的内容-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--网站开启对web app程序的支持。-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--在web app应用下状态条（屏幕顶部条）的颜色-->
+    <meta name="format-detection" content="telephone=no">
+    <!--如果你不希望手机自动将网页中的电话号码显示为拨号的超链-->
+    <!--	<meta name="apple-itunes-app" content="app-id=456823345"-->
+    <!--在商城中对应的app-->
+    <title>找同感 </title>
+    <meta name="keywords" content="懂你,感情,心理医生,心情,秘密,情感">
+    <meta name="description" content="说出你的经历和故事,让具有相同经历 相同故事的人来感受你的心情,一起去排忧解难">
+    <link href="{% static "global.css" %}" rel="stylesheet" type="text/css">
+    <!--<meta property="wb:webmaster" content="21ea5cf69932c256">不知道干嘛的  实现第三方QQ登录的-->
+</head>
+<body>
+<script>
+
+    var gp = {
+        location: 'home'
+    }
+</script>
+<!-- layout start -->
+<div class="layout homePage" id="layout">
+    <!-- layout slide start -->
+    <!-- layout slide start -->
+    <div class="laySlide" id="lay_slide">
+        <div class="slideTit icoSlide icoSlideTit clearfix" id="slide_tit">
+            <div class="slideUserImg"><img src="/static/lengicon.jpg"></div>
+            <p class="slideUserName">登录找感觉</p>
+            <!--<a href="http://m.lengxiaohua.cn/touch.php?a=index&m=setting" class="slideUserSettings icoSlide icoSlideSettings"></a>-->
+        </div>
+        <div class="slideList" id="slide_list">
+            <div class="subSlideList">
+                <div class="subSlide hover">
+                    <a href="http://127.0.0.1:8000" class="subSlideLink icoSlide icoSlideNewJoke"><span
+                            class="subSlideLinkTxt">最新内容</span></a>
+                </div>
+                <div class="subSlide ">
+                    <a href="http://127.0.0.1:8000/top" class="subSlideLink icoSlide icoSlideCharts"><span
+                            class="subSlideLinkTxt">排行榜</span></a>
+                </div>
+            </div>
+            <div class="subSlideList">
+                <div class="subSlide ">
+                    <a href="http://127.0.0.1:8000/myblog" class="subSlideLink icoSlide icoSlideContribute"><span
+                            class="subSlideLinkTxt">我的投稿</span></a>
+                </div>
+                <div class="subSlide ">
+                    <a href="http://127.0.0.1:8000/mycomment" class="subSlideLink icoSlide icoSlideComment"><span
+                            class="subSlideLinkTxt">我的评论</span></a>
+                </div>
+                <div class="subSlide ">
+                    <a href="http://127.0.0.1:8000/mycollection" class="subSlideLink icoSlide icoSlideCollection"><span
+                            class="subSlideLinkTxt">我的收藏</span></a>
+                </div>
+            </div>
+            <div class="subSlide ">
+                <a href="http://127.0.0.1:8000/feedback" class="subSlideLink icoSlide icoSlideNOImgJoke"><span
+                        class="subSlideLinkTxt">意见反馈</span></a>
+            </div>
+            <div class="subSlide ">
+                <a href="http://127.0.0.1:8000/about" class="subSlideLink icoSetting icoInfoSetting "><span
+                        class="subSlideLinkTxt">关于</span></a>
+            </div>
+            <!--icoSlide icoSlideCartoon-->
+            <!--	<div class="subSlideList">
+                    <div class="subSlide ">
+                        <a href="http://127.0.0.1:8000/reviewdraft" class="subSlideLink icoSlide icoSlideReview"><span class="subSlideLinkTxt">评论就是了</span></a>
+                    </div>
+                </div>-->
+        </div>
+        <div class="slideSearch" id="slide_search">
+            <input type="text" placeholder="搜索" id="slide_search_input">
+        </div>
+    </div>
+    <!-- lay content start -->
+    <div class="layContent" id="lay_content" style="min-height: 677px;">
+        <!-- head start -->
+        <div class="layHeader">
+            <a href="http://m.lengxiaohua.cn/#" class="headerActLeft icoHeadAct icoHeadSlide" title="菜单列表"
+               id="pointer"></a>
+            <a href="http://127.0.0.1:8000/addblog" class="headerActTop icoHeadAct icoHeadEdit" title="我要投稿"></a>
+
+            <h1><p class="headerTxtBox titTxt"><span class="headerRabbit icoRabbit icoRabbit2"></span><span
+                    class="headerTxt"></span></p></h1>
+        </div>
+        <!-- head end -->
+        <!-- main content start -->
+        <div class="layMain">
+            <ul class="jokeIndex jokeList" data-jokelist="true">
+                {% for post in posts %}
+                    <li class="subJokeContain" data-joke-id="{{ post.id }}">
+                        <div class="jokeTit">
+                            <!--改成blog的主任的nick name-->
+                            <div class="jokeAuthorImg"><img src="/static/0" alt="{{ post.user_id }}"></div>
+                            <div class="jokeAuthorName">{{ post.user_id }}</div>
+                            <div class="jokeAuthorTitle">
+                                &nbsp;[{{ post.get_category_display }}]&nbsp;{{ post.outline }}</div>
+                            <div class="jokeAuthorTime">{{ post.timestamp |timesince }}</div>
+                        </div>
+                        <!-- author info -->
+
+                        <a href="http://127.0.0.1:8000/blog/{{ post.id }}" class="jokeContent">
+								<span class="subJokeTxt">
+                                    {{ post.body }}
+                                </span>
+                            {% if post.photo %}
+                                <span class="subJokeImg">
+<img title="" alt=""
+     src="/static/default_load_img.gif"
+     data-url="/media/{{ post.photo }}"
+     data-lazy="true"
+     data-content-img="/media/{{ post.photo }}"><!--分享时使用的内容  分享时应该使用完整的url-->
+</span>
+                            {% endif %}
+
+                        </a><!-- joke content -->
+                        <dl class="jokeCommentList">
+                            <!-- <dt class="jokeCommentTit"></dt> -->
+                        </dl>
+                        <div class="jokeAct clearfix">
+                            <a href="javascript:void(0)" class="jokeColdBtn jokeBtn" data-cold="true"><span
+                                    class="icoJokeAct icoJokeCold"></span><span data-cold-num="true">赞的数目 </span></a><!-- 好冷 -->
+                            <a href="http://127.0.0.1:8000/blog/{{ post.id }}" class="jokeCommentBtn jokeBtn"><span
+                                    class="icoJokeCommentPoint"></span>删除</a><!-- 评论 -->
+                            <a href="javascript:void(0)" class="jokeShareBtn jokeBtn" data-share="false"
+                               data-share-href="http://m.lengxiaohua.cn/109550.html"><span
+                                    class="icoJokeAct icoJokeShare"></span></a><!-- 分享 -->
+                            <a href="javascript:void(0)" class="jokeCollectionBtn jokeBtn " data-collect="true"><span
+                                    class="icoJokeAct icoJokeCollection"></span></a><!-- 收藏 由collectionOn控制 -->
+                        </div>
+                    </li><!-- joke detail -->
+                {% endfor %}
+            </ul>
+            <a href="javascript:void(0)" class="moreBtn" data-cont-more="2"><span class="moreBtnTxt">更多冷货</span></a><!-- more -->
+        </div>
+        <!-- main content end -->
+        <!-- 页脚底部   登录 客户端  返回顶部   footer start -->
+        <div class="layFooter footerActList clearfix" data-footer-banner="true">
+            <a href="javascript:void(0)" class="actBtn" data-login="0">登录</a>
+            <a href="http://dl.lengxiaohua.cn/static/lxh/lxh_feibo.apk" target="_blank" class="actBtn"
+               data-appld="ture">客户端</a>
+            <input type="hidden" id="app_android" value="http://dl.lengxiaohua.cn/static/lxh/lxh_feibo.apk">
+            <input type="hidden" id="app_ios" value="http://itunes.apple.com/cn/app/id456823345?mt=8">
+            <a href="javascript:void(0)" class="actBtn" data-gotop="ture" id="go_top">返回顶部<span
+                    class="icoJokeAct icoGoTop"></span></a>
+        </div>
+        <!-- footer end -->
+    </div>
+    <!-- lay content end -->
+</div>
+<!-- home page end -->
+
+<!-- layout end -->
+<!-- 下方弹出分享框-->
+<div class="popBox jokeSelect" id="share_popbox" style="display:none"><!-- share pop box -->
+    <div class="wrap"></div>
+    <div class="actBox">
+        <ul class="popActList clearfix">
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-sinawb-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopSina"></span></span>
+                    <span class="popActTxt">新浪微博</span>
+                </a>
+            </li>
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-txwb-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopTencent"></span></span>
+                    <span class="popActTxt">腾讯微博</span>
+                </a>
+            </li>
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-qzone-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopQzone"></span></span>
+                    <span class="popActTxt">QQ空间</span>
+                </a>
+            </li>
+            <!--
+            <li class="subPopAct">
+                <a href="javascript:void(0)"  data-rr-share=true class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopRenRen"></span></span>
+                    <span class="popActTxt">人人网</span>
+                </a>
+            </li>
+             -->
+        </ul>
+        <div class="popActBtn">
+            <a href="javascript:void(0)" data-share-close="true" class="popAcBlueBtn">取消</a>
+        </div>
+    </div>
+</div>
+<!--下面弹出快速登录框-->
+<div class="popBox unLoginMsgbox" id="login_popbox" style="display: none;">
+    <div class="wrap"></div>
+    <div class="actBox">
+        <p class="unLoginTxt">选择以下账号快速登陆</p>
+        <ul class="platformList">
+            <li class="subPlatform">
+                <a href="http://m.lengxiaohua.cn/touch.php?a=login_sina&m=login"
+                   class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoSinaPlat"></span>新浪微博账号登陆</a>
+            </li>
+            <li class="subPlatform">
+                <a href="http://m.lengxiaohua.cn/touch.php?a=login_qq&m=login"
+                   class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoTencentPlat"></span>QQ账号登陆</a>
+            </li>
+        </ul>
+        <div class="popActBtn">
+            <a href="javascript:void(0)" data-login-close="true" class="popAcRedBtn">取消</a>
+        </div>
+    </div>
+</div>
+<!-- login pop box -->
+
+
+<!--站长流量统计工具
+<div style="display:none;">
+    <script src="/static/stat.php" language="JavaScript"></script>
+    <script src="/static/core.php" charset="utf-8" type="text/javascript"></script>
+    <a href="http://www.cnzz.com/stat/website.php?web_id=5583949" target="_blank" title="站长统计">站长统计</a>
+</div>
+站长流量统计工具-->
+
+
+<!--百度广告
+<script type="text/javascript">
+	/*移动端悬浮*/
+	var cpro_id = "u1695490";
+	</script>
+	<script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>
+/百度广告-->
+
+
+<!--zepto库和滚动加载库  "-->
+<script src="/static/zepto.js" type="text/javascript"></script>
+<script src="/static/jquery.scrollLoading.min.js" type="text/javascript"></script>
+<!--zepto库和滚动加载库-->
+
+<script src="/static/global.js" type="text/javascript"></script>
+<script src="/static/touch.js" type="text/javascript"></script>
+</body>
+</html>

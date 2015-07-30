@@ -1,0 +1,31 @@
+{% load mytimesince %}
+  {% for post in posts %}
+                    <li class="subJokeContain" data-joke-id="{{ post.id }}">
+							<div class="jokeTit">
+                                <!--改成blog的主任的nick name-->
+								<div class="jokeAuthorImg"><img src="/static/0" alt="{{ post.user_id }}"></div>
+								<div class="jokeAuthorName">{{ post.user_id }}</div>
+                                <div class="jokeAuthorTitle">&nbsp;[{{ post.get_category_display }}]&nbsp;{{ post.outline }}</div>
+								<div class="jokeAuthorTime">{{ post.timestamp |mytimesince }}前</div>
+							</div><!-- author info -->
+
+							<a href="http://127.0.0.1:8000/blog/{{ post.id }}" class="jokeContent">
+								<span class="subJokeTxt" >
+                                    {{ post.body }}
+                                </span>
+                            </a><!-- joke content -->
+							<dl class="jokeCommentList">
+								<!-- <dt class="jokeCommentTit"></dt> -->
+                            </dl>
+							<div class="jokeAct clearfix">
+								<a href="javascript:void(0)" class="jokeColdBtn jokeBtn" data-cold="true"><span >&hearts;&nbsp;共鸣</span><span data-cold-num="true">{{ post.laud_num }}</span></a><!-- 好冷 -->
+								<a href="http://127.0.0.1:8000/blog/{{ post.id }}" class="jokeCommentBtn jokeBtn"><span class="icoJokeCommentPoint"></span>{{ post.comment_set.count }}</a><!-- 评论 -->
+								<a href="javascript:void(0)" class="jokeShareBtn jokeBtn" data-share="false" data-share-href="http://m.lengxiaohua.cn/109550.html"><span class="icoJokeAct icoJokeShare"></span></a><!-- 分享 -->
+     {% if post.collect %}
+								<a href="javascript:void(0)" class="jokeCollectionBtn jokeBtn collectionOn" data-collect="true"><span class="icoJokeAct icoJokeCollection   "></span></a><!-- 收藏 由collectionOn控制 -->
+                            {% else %}
+								<a href="javascript:void(0)" class="jokeCollectionBtn jokeBtn " data-collect="true"><span class="icoJokeAct icoJokeCollection   "></span></a><!-- 收藏 由collectionOn控制 -->
+                            {% endif %}
+							</div>
+						</li><!-- joke detail -->
+  {% endfor %}

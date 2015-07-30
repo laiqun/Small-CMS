@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>
+        register
+</title>
+</head>
+<body>
+<h1>
+       don't have account  Create an account
+   <br>
+    <a href="login">already have  login in</a>
+</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+   <!-- {% csrf_token %}-->
+        {{form.as_p}}
+        <input type="submit" value="Create the account">
+        </input>
+</form>
+</body>
+</html>

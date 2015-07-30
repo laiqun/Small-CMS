@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>
+        blog list
+    </title>
+</head>
+<body>
+<a href="register"> submit story</a>
+{% for post in posts %}
+    <h2>[{{ post.get_category_display }}]{{ post.outline }}</h2>
+    <p>{{ post.timestamp }}</p>
+    <p>{{ post.body }}</p>
+{% endfor %}
+</body>
+</html>

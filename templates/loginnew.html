@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=320, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <title>登录</title>
+    <link href="/static/com.min.css" rel="stylesheet">
+    <link href="/static/iconpng.min.css" rel="stylesheet">
+    {% load staticfiles %}
+    <link href="{% static "global.css" %}" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .r-adv, .quickReply-ad, iframe[height="517"][src^="http://gou.mop.com/iframe/"], [class^="adP"], .gg01, .gg02, .gg03, .ggP, iframe[src^="http://pub.mop.com/widget."], .adarea, .adarea_top, a[href^="http://trackx.mop.com/"] {
+            display: none
+        }</style>
+</head>
+<body>
+<script>
+
+    var gp = {
+        location: 'login_register'
+    }
+</script>
+<div>
+    <a href="http://127.0.0.1:8000" class="headerActLeft icoHeadAct icoHeadBack" title="返回上一页"></a>
+
+    <div class="layHeader">
+        <div class="headerTxtBox titTxt">
+
+            <div class="tc" style="height: 45px;line-height: 45px;vertical-align: middle;text-align: center">寻共鸣 登录
+            </div>
+        </div>
+    </div>
+    <div class="wrap-content">
+        <div class="lrHeadWrapper   bdGray clearfix">
+            <a class="d-b w50 fl  tc c999   brGray on" data-login="true" href="#"
+               style="height: 45px;line-height:45px;vertical-align: middle">登录</a>
+            <a class="d-b w50 fl  tc c999  " data-register="true" href="#"
+               style="height: 45px;line-height:45px;vertical-align: middle">注册</a>
+        </div>
+        <div class="mt11m pl11m pr11m oh" style="margin-top: 21px; margin-left: 16px;margin-right: 16px" id="divlogin">
+
+            <form action="" method="post" id="form_login">
+                <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px;">
+                    <div class="iconBox fl "><i class="icon icon3 icon3-3"></i></div>
+                    <div class="oh "><input name="username" class=" lh15m h15m c999" style=" height: 37px;" type="text"
+                                            placeholder="手机号/Email">
+                    {{ form.username }}</div>
+                </div>
+                <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                    <div class="iconBox fl "><i class="icon icon2 icon2-29"></i></div>
+                    <div class="oh "><input name="password" class=" lh15m h15m c999" style=" height: 37px;"type="password"
+                                            placeholder="密码"></div>
+                </div>
+                <!--<div class="oh mb1m">
+                   <label class="checkboxOut fl">
+                      <span class="checkboxStyle  on">
+                          <i class="icon icon1 icon1-18"></i>
+                          <input type="checkbox" checked="checked" name="autoLogin" class="v-h">
+                      </span>
+                   <spn class="c666">自动登录</spn>
+                  </label>
+              </div>-->
+                <p class="mt1m">
+                    <button onclick="document.getElementById('form_login').submit()"
+                            class="btn bc-green login-submit-btn">登录
+                    </button>
+                </p>
+                <p class="mt1m clearfix">
+                    <a class="fr c-orange3" href="http://m.mop.com/losepwd.html">忘记密码？</a>
+                </p>
+            </form>
+        </div>
+
+
+        <div class="mt11m pl11m pr11m oh" id="divregister"
+             style="display:none;margin-top: 21px; margin-left: 16px;margin-right: 16px; ">
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon3 icon3-3"></i></div>
+                <div class="oh pr07m"><input class=" lh15m h15m c999" name="userName" type="text"style=" height: 37px;"
+                                             placeholder="用户名（4-20个字符）"></div>
+            </div>
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon3 icon3-3"></i></div>
+                <div class="oh pr07m"><input class=" lh15m h15m c999" name="userName" type="text"style=" height: 37px;"
+                                             placeholder="昵称（4-20个字符）"></div>
+            </div>
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon2 icon2-29"></i></div>
+                <div class="oh">
+
+                    <div class="oh pr07m">
+                        <input class=" lh15m h15m c999" style=" height: 37px;" type="password" name="password" placeholder="密码（6-20个字符）">
+                    </div>
+
+                </div>
+            </div>
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon2 icon2-29"></i></div>
+                <div class="oh">
+
+                    <div class="oh pr07m">
+                        <input class=" lh15m h15m c999" style=" height: 37px;"type="password" name="password" placeholder="密码确认（6-20个字符）">
+                    </div>
+
+                </div>
+            </div>
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon2 icon2-37"></i></div>
+                <div class="oh pr07m"><input class=" lh15m h15m c999" type="text" name="email"style=" height: 37px;"
+                                             placeholder="email，用于找回密码"></div>
+            </div>
+            <div class="formBox h29m lh3m oh mb1m" style="margin-bottom: 21px; height: 37px;">
+                <div class="iconBox fl pr07m"><i class="icon icon2 icon2-37"></i></div>
+                <div class="oh pr07m"><input class=" lh15m h15m c999" type="text" name="phone"style=" height: 37px;"
+                                             placeholder="手机号码，用于找激活账号"></div>
+            </div>
+            <div class="oh mb1m">
+                <span class="btnGet d-ib  lh22m pl1m pr1m bor-r4 fr ml07m get-phone-code">获取验证码</span>
+
+                <div class="formBox h25m lh28m oh pl03m pr03m">
+                    <input class=" lh15m h15m c999" type="text" name="code">
+                </div>
+            </div>
+            <p>
+                <input type="hidden" name="tmpuid" value="1882570570">
+                <input type="hidden" name="targetUrl" value="/hi/index.html">
+                <button class="btn bc-orange regist-btn" currformid="7qa6es"
+                        fmtoken="600e1e0a-0f9b-4539-83ff-78cbd5536d03">注册
+                </button>
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="oh mt22m mb22m">
+        <p class="c999 mb1m">其他方式登录：</p>
+
+        <div class="loginWays oh">
+            <a class="d-ib fl pl07m pr07m brGray ows2" href="http://m.mop.com/login.html#" name="tencent"><i
+                    class="icon icon2 icon2-32 mr03m"></i><span class="c999">QQ</span></a>
+            <a class="d-ib fl pl07m ows2" href="http://m.mop.com/login.html#" name="weibo"><i
+                    class="icon icon2 icon2-33 mr03m"></i><span class="c999">微博</span></a>
+        </div>
+    </div>
+
+
+</div>
+<!--zepto库和滚动加载库  "-->
+<script src="/static/zepto.js" type="text/javascript"></script>
+<script src="/static/jquery.scrollLoading.min.js" type="text/javascript"></script>
+<!--zepto库和滚动加载库-->
+
+<script src="/static/global.js" type="text/javascript"></script>
+<script src="/static/touch.js" type="text/javascript"></script>
+</body>
+</html>

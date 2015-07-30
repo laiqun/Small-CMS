@@ -1,0 +1,2830 @@
+@charset "utf-8";
+body * {
+    word-wrap: break-word;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+body, button, input, select, textarea {
+    font: 14px/1.5 "microsoft yahei", tahoma, arial, \5b8b\4f53;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+code, kbd, pre, samp {
+    font-family: courier new, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #515151;
+}
+
+/*a:visited{background: #f00;}*/
+a:hover {
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    color: #505050;
+    position: relative;
+}
+
+textarea:focus, input:focus, select:focus, a {
+    outline: none;
+}
+
+textarea {
+    padding-left: 2px;
+    border: #b3d8f1 solid 1px;
+}
+
+select {
+    border: #b3d8f1 solid 1px;
+}
+
+span, a {
+    display: inline-block;
+}
+
+input:focus, textarea:focus {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+/*clear*/
+.clearfix:after {
+    content: " ";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/*IE6*/
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+
+/*IE7*/
+
+/****layout***/
+html, body {
+    height: 100%;
+}
+
+.layout {
+    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+    height: auto;
+    _height: 100%;
+}
+
+.layContent {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    height: 110%;
+    position: relative;
+    float: right;
+    z-index: 2;
+    -moz-transition-duration: .8s;
+    -webkit-transition-duration: .8s;
+    -ms-transition-duration: .8s;
+    transition-duration: .8s;
+}
+
+.layHeader {
+    padding: 0 50px;
+    position: relative;
+}
+
+.layMain {
+    padding: 15px 20px 50px;
+    min-height: 100%;
+    height: auto;
+}
+
+.layFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.laySlide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 228px;
+    height: 100%;
+    background: #fff;
+    visibility: hidden;
+    overflow: hidden;
+    -moz-transition-duration: .8s;
+    -webkit-transition-duration: .8s;
+    -ms-transition-duration: .8s;
+    transition-duration: .8s;
+}
+
+.slideOn .layContent {
+    margin-right: -228px;
+    height: 200%;
+    -moz-transition-duration: .8s;
+    -webkit-transition-duration: .8s;
+    -ms-transition-duration: .8s;
+    transition-duration: .8s;
+}
+
+.slideOn .laySlide {
+    visibility: visible;
+    z-index: 3;
+    -moz-transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    -ms-transition-duration: .3s;
+    transition-duration: .3s;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*full-tip*/
+undefined/**.full-tip {
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    z-index: 1000;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    font-weight: bold;
+    background: #67c1fe;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px #D1EDFE;
+
+    -webkit-transition: opacity .7s, -webkit-transform .7s;
+    -moz-transition: opacity .7s, -moz-transform .7s;
+    -ms-transition: opacity .7s, -ms-transform .7s;
+    -o-transition: opacity .7s, -o-transform .7s;
+    transition: opacity .7s, transform .7s;
+    opacity: 0;
+
+    /*-webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    backface-visibility:hidden;*\/
+}
+**/
+undefined/**.full-tip-err {
+    background-color: #f77d70;
+    box-shadow: 0 0 3px 3px #f4bcb7;
+}
+**/
+undefined/**.full-tip-warm {
+    background-color: #debc05;
+    box-shadow: 0 0 3px 3px #e8cc37;
+}
+**/
+undefined/**.full-tip .flms-box {
+    padding: 10px 25px;
+}
+**/
+undefined/**.fade-in {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+**/
+undefined/**.fade-out {
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    transform: translateY(-10px);
+    opacity: 0;
+}
+**/
+textarea {
+    border: 0;
+    resize: none;
+    overflow-y: visible;
+    height: 8em;
+}
+
+textarea:focus {
+    border: 0;
+}
+
+/****text style****/
+.titTxt {
+    color: #229eee;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/****ico style****/
+.icoMain {
+    background: url("/static/main-ico-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+
+undefined/**.icoMain2 {
+    background: url("/static/main-ico-2-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+**/
+/****joke act ico****/
+undefined/**.icoGoodFace {
+    background-position: 0 -1288px;
+}
+**/
+undefined/**.icoBadFace {
+    background-position: 0 -1338px;
+}
+**/
+undefined/**.icoViolationFace {
+    background-position: 0 -1388px;
+}
+**/
+undefined/**.icoWriteFace {
+    background-position: 0 -1437px;
+}
+**/
+undefined/**.icoShareBtn {
+    background-position: 0 -1230px;
+}
+**/
+/*.icoShareBtn:hover{background-position: 0 -1180px;}*/
+undefined/**.icoShareSina {
+    background-position: 0 -1550px;
+}
+**/
+undefined/**.shareOn .icoShareSina, .icoLoginSina {
+    background-position: 0 -1600px;
+}
+**/
+undefined/**.icoShareTencent {
+    background-position: 0 -1650px;
+}
+**/
+undefined/**.shareOn .icoShareTencent {
+    background-position: 0 -1700px;
+}
+**/
+undefined/**.icoShareQZone {
+    background-position: 0 -1750px;
+}
+**/
+undefined/**.shareOn .icoShareQZone {
+    background-position: 0 -1800px;
+}
+**/
+undefined/**.icoShareRenRen {
+    background-position: 0 -1850px;
+}
+**/
+undefined/**.shareOn .icoShareRenRen, .icoLoginRenRen {
+    background-position: 0 -1900px;
+}
+**/
+undefined/**.icoShareChoose {
+    background-position: 0 1500px;
+}
+**/
+undefined/**.icoJokePass {
+    background-position: 0 4px;
+}
+**/
+undefined/**.icoJokeAudit {
+    background-position: 0 -96px;
+}
+**/
+undefined/**.icoJokeFail {
+    background-position: 0 -196px;
+}
+**/
+undefined/**.jokePass .icoJokePass {
+    background-position: 0 -46px;
+}
+**/
+undefined/**.jokeAudit .icoJokeAudit {
+    background-position: 0 -146px;
+}
+**/
+undefined/**.jokeFail .icoJokeFail {
+    background-position: 0 -246px;
+}
+**/
+undefined/**.icoJokeClick {
+    background-position: 0 -300px;
+}
+**/
+/*.editJoke .icoJokeClick:hover{background-position: 0 -350px;}*/
+undefined/**.editJoke .jokeClick .icoJokeClick {
+    background-position: 0 -350px;
+}
+**/
+undefined/**.icoChooseAll {
+    background-position: 0 -400px;
+}
+**/
+undefined/**.icoUnChooseAll {
+    background-position: 0 -450px;
+}
+**/
+undefined/**.icoDelAll {
+    background-position: 0 -500px;
+}
+**/
+.icoPlatLink {
+    background-position: right -635px;
+}
+
+/*.icoPlatLink:hover{background-position: right -685px;}*/
+.icoSinaPlat {
+    background-position: 0 -539px;
+}
+
+.icoTencentPlat {
+    background-position: 0 -589px;
+}
+
+undefined/**.icoMyComment {
+    background-position: 0 -747px;
+}
+**/
+undefined/**.icoRelyMyComment {
+    background-position: 0 -847px;
+}
+**/
+undefined/**.myCommentOn .icoMyComment {
+    background-position: 0 -796px;
+}
+**/
+undefined/**.relyMyCommentOn .icoRelyMyComment {
+    background-position: 0 -897px;
+}
+**/
+undefined/**.icoCommentElite {
+    background-position: 0 -1000px;
+}
+**/
+undefined/**.icoCommentAct {
+    background-position: 0 -950px;
+}
+**/
+undefined/**.icoDelComment {
+    background-position: 15px -1040px;
+}
+**/
+undefined/**.icoRelyComment {
+    background-position: 13px -1090px;
+}
+**/
+undefined/**.icoDetailComment {
+    background-position: 13px -1140px;
+}
+**/
+undefined/**.icoDayCharts {
+    background-position: 0 -47px;
+}
+**/
+undefined/**.chartsDay .icoDayCharts {
+    background-position: 0 -97px;
+}
+**/
+undefined/**.icoWeekCharts {
+    background-position: 4px -148px;
+}
+**/
+undefined/**.chartsWeek .icoWeekCharts {
+    background-position: 4px -198px;
+}
+**/
+undefined/**.icoCommentCharts {
+    background-position: 4px -247px;
+}
+**/
+undefined/**.chartsComment .icoCommentCharts {
+    background-position: 4px -297px;
+}
+**/
+undefined/**.icoLoginTencent {
+    background-position: 0 0;
+}
+**/
+/****other ico****/
+undefined/**.layHeader .icoHeadPoint {
+    background: url("/static/point-s.png") no-repeat 0 -2px;
+    width: 7px;
+    height: 5px;
+    vertical-align: top;
+}
+**/
+undefined/**.icoCommentActPoint {
+    background: url("/static/point-s.png") no-repeat 0 -13px;
+    width: 9px;
+    height: 10px;
+    vertical-align: top;
+}
+**/
+.icoJokeCommentPoint {
+    background: url("/static/point-s.png") no-repeat 0 -24px;
+    width: 9px;
+    height: 10px;
+    vertical-align: top;
+}
+
+undefined/**.feedbackLogin .systemTxtPoint {
+    background: url("/static/point-s.png") no-repeat 2px -33px;
+}
+**/
+undefined/**.feedbackLogin .userTxtPoint {
+    background: url("/static/point-s.png") no-repeat 3px -60px;
+}
+**/
+undefined/**.settingsContact .contactPoint {
+    background: url("/static/point-s.png") no-repeat 3px -85px;
+}
+**/
+/*act btn*/
+/*.simpleJokeAct .actBtn:hover{background: url("/static/btn-bg-s.png") repeat-x 0 0;}*/
+/*.footerActList .actBtn:active{background: url("/static/btn-bg-s.png") repeat-x 0 0;}*/
+/*.jokeDetail .jokeRelyBtn:hover{background: url("/static/btn-bg-s.png") repeat-x 0 0;}*/
+/*.jokeIndex .commentAct:hover{background: #49baf5 url("/static/comment-act-s.png") repeat-x 0 0;}*/
+/*.feedbackLogin .submitBtn:hover{background: #49baf5 url("/static/btn-bg-s.png") repeat-x 0 0;}*/
+/*.jokeReview .jokeAct a:hover{background: #49baf5 url("/static/btn-bg-s.png") repeat-x 0 0;}*/
+/*joke index more btn*/
+.moreBtn {
+    background: url("/static/more-btn-s.png") repeat-x 0 0;
+}
+
+/*.moreBtn:hover{background: url("/static/more-btn-hover-s.png") repeat-x 0 0;}*/
+/****slide background****/
+.laySlide {
+    background: url("/static/slide-bg-s.png") repeat-y 0 0;
+}
+
+/****contact bg****/
+undefined/**.settingsContact .layHeader {
+}
+**/
+undefined/**.settingsContact .layHeaderBox {
+}
+**/
+/****header rabbit ico** **/
+undefined/**.icoRabbit {
+    background: url("/static/header-rabbit-s.png") no-repeat 0 0;
+}
+**/
+undefined/**.icoRabbit1 {
+    background-position: 0 2px;
+}
+**/
+undefined/**.icoRabbit2 {
+    background-position: 0 -74px;
+}
+**/
+undefined/**.icoRabbit3 {
+    background-position: 0 -148px;
+}
+**/
+undefined/**.icoRabbit4 {
+    background-position: 0 -222px;
+}
+**/
+undefined/**.icoRabbit5 {
+    background-position: 0 -299px;
+}
+**/
+undefined/**.icoRabbit6 {
+    background-position: 0 -373px;
+}
+**/
+/*my collection*/
+undefined/**.icoRabbit7 {
+    background-position: 0 -451px;
+}
+**/
+/****header act ico****/
+.icoHeadAct {
+    background: url("/static/header-act-s.png") no-repeat 0 0;
+}
+
+.icoHeadSlide {
+    background-position: 0 0;
+}
+
+.slideOn .icoHeadSlide {
+    background-position: 0 -100px;
+}
+
+undefined/**.icoHeadContribute {
+    background-position: 0 -250px;
+}
+**/
+undefined/**.icoHeadShare {
+    background-position: 0 -150px;
+}
+**/
+undefined/**.icoHeadBack {
+    background-position: 0 -50px;
+}
+**/
+.icoHeadEdit {
+    background-position: 0 -200px;
+}
+
+undefined/**.editJoke .icoHeadEdit {
+    background-position: 0 -350px;
+}
+**/
+undefined/**.icoHeadHome {
+    background-position: 0 -400px;
+}
+**/
+undefined/**.icoHeadSubmit {
+    background-position: 0 -250px;
+}
+**/
+undefined/**.icoHeadClose {
+    background-position: 0 -350px;
+}
+**/
+undefined/**.searchList .searchOn .icoHeadClose {
+    background-position: 0 -450px;
+}
+**/
+undefined/**.searchList .icoHeadSubmit {
+    display: none;
+}
+**/
+undefined/**.searchList .searchOn .icoHeadSubmit {
+    display: inline-block;
+}
+**/
+/****joke index ico****/
+.icoJokeAct {
+    background: url("/static/joke-act-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+
+.icoJokeCold {
+    background-position: 0 4px;
+}
+
+.icoJokeCollection {
+    background-position: -1px -47px;
+}
+
+undefined/**.collectionOn .icoJokeCollection {
+    background-position: -1px -97px;
+}
+**/
+.icoJokeShare {
+    background-position: -1px -146px;
+}
+
+undefined/**.icoCommentAuthor {
+    background-position: -1px -248px;
+}
+**/
+.icoGoTop {
+    background-position: 2px -199px;
+}
+
+undefined/**.icoEliteComment {
+    background-position: -2px -301px;
+}
+**/
+undefined/**.icoNewComment {
+    background-position: -2px -351px;
+}
+**/
+undefined/**.icoCommentTop {
+    background-position: 0 -392px;
+}
+**/
+undefined/**.icoCommentRely {
+    background-position: -1px -442px;
+}
+**/
+undefined/**.icoCommentReport {
+    background-position: 0 -491px;
+}
+**/
+/****txt ico****/
+.homePage .headerTxt {
+    background: url("/static/index-head-txt-s.jpg") no-repeat 0 4px;
+}
+
+undefined/**.moreBtn .moreJokeTxt {
+    background: url("/static/more-joke-s.png") no-repeat 0 7px;
+}
+**/
+undefined/**.moreBtn .moreCommentTxt {
+    background: url("/static/more-comment-txt-s.png") no-repeat 0 7px;
+}
+**/
+/****slide ico****/
+.icoSlide {
+    background: url("/static/slide-ico-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+
+.icoSlideNewJoke {
+    background-position: 8px 12px;
+}
+
+.icoSlideCharts {
+    background-position: 8px -36px;
+}
+
+.icoSlideNOImgJoke {
+    background-position: 10px -89px;
+}
+
+undefined/**.icoSlideCartoon {
+    background-position: 8px -136px;
+}
+**/
+.icoSlideContribute {
+    background-position: 9px -189px;
+}
+
+.icoSlideComment {
+    background-position: 9px -238px;
+}
+
+.icoSlideCollection {
+    background-position: 8px -289px;
+}
+
+undefined/**.icoSlideReview {
+    background-position: 9px -337px;
+}
+**/
+undefined/**.icoSlideSettings {
+    background-position: 2px -397px;
+}
+**/
+.icoSlideTit {
+    background-position: 210px -448px;
+}
+
+/****popbox ico****/
+.icoPopBox {
+    background: url("/static/pop-act-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+
+undefined/**.icoSuccessPrompt {
+    background-position: 0 2px;
+}
+**/
+undefined/**.icoFailPrompt {
+    background-position: 0 -48px;
+}
+**/
+.icoPopSina {
+    background-position: 0 -88px;
+}
+
+.icoPopTencent {
+    background-position: 0 -140px;
+}
+
+undefined/**.icoPopWXFriend {
+    background-position: 0 -187px;
+}
+**/
+undefined/**.icoPopWX {
+    background-position: 0 -238px;
+}
+**/
+.icoPopQzone {
+    background-position: 0 -292px;
+}
+
+undefined/**.icoPopRenRen {
+    background-position: 0 -335px;
+}
+**/
+undefined/**.icoPopCopy {
+    background-position: 0 -387px;
+}
+**/
+/****setting ico****/
+.icoSetting {
+    background: url("/static/setting-act-s.png") no-repeat 0 0;
+    vertical-align: top;
+}
+
+undefined/**.icoAccountSetting {
+    background-position: 7px 14px;
+}
+**/
+undefined/**.icoWeiboSetting {
+    background-position: 4px -35px;
+}
+**/
+undefined/**.icoNoticeSetting {
+    background-position: 6px -87px;
+}
+**/
+.icoInfoSetting {
+    background-position: 8px -137px;
+}
+
+undefined/**.icoFeedBackSetting {
+    background-position: 5px -185px;
+}
+**/
+undefined/**.icoNewSetting {
+    background-position: 7px -251px;
+}
+**/
+undefined/**.icoDownRecommend {
+    background-position: 4px -301px;
+}
+**/
+undefined/**.icoOpenRecommend {
+    background-position: 4px -351px;
+}
+**/
+undefined/**.icoAccountSelect {
+    background-position: 0 -546px;
+}
+**/
+/*.icoAccountSelect:hover{background-position: 0 -596px;}*/
+undefined/**.selectOn .icoAccountSelect {
+    background-position: 0 -596px;
+}
+**/
+/*.selectOn .icoAccountSelect:hover{background-position: 0 -546px;}*/
+undefined/**.icoAccountAdd {
+    background-position: 0 -646px;
+}
+**/
+undefined/**.icoUserSurvey {
+    background-position: 4px -794px;
+}
+**/
+undefined/**.icoUserUpdate {
+    background-position: 6px -841px;
+}
+**/
+undefined/**.icoCountClose {
+    background-position: 1px -750px
+}
+**/
+undefined/**.icoSubmitBtn {
+    background-position: 1px -690px
+}
+**/
+undefined/**.icoContactQQ {
+    background-position: 11px -400px;
+}
+**/
+undefined/**.icoContactMail {
+    background-position: 11px -448px;
+}
+**/
+undefined/**.icoContactWeb {
+    background-position: 11px -500px;
+}
+**/
+/****media****/
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .icoSetting {
+        background-image: url(/static/setting-act.png);
+        background-size: 50px auto;
+    }
+
+    .icoPopBox {
+        background-image: url(/static/pop-act.png);
+        background-size: 50px auto;
+    }
+
+    .icoSlide {
+        background-image: url(/static/slide-ico.png);
+        background-size: 50px auto;
+    }
+
+    .homePage .headerTxt {
+        background-image: url(/static/index-head-txt.jpg);
+        background-size: 93px auto;
+    }
+
+undefined/**    .moreBtn .moreJokeTxt {
+        background-image: url(/static/more-joke.png);
+        background-size: 96px auto;
+    }
+**/
+undefined/**    .moreBtn .moreCommentTxt {
+        background-image: url(/static/more-comment-txt.png);
+        background-size: 96px auto;
+    }
+**/
+    .icoJokeAct {
+        background-image: url(/static/joke-act.png);
+        background-size: 100px auto;
+    }
+
+    .icoHeadAct {
+        background-image: url(/static/header-act.png);
+        background-size: 50px auto;
+    }
+
+undefined/**    .icoRabbit {
+        background-image: url(/static/header-rabbit.png);
+        background-size: 50px auto;
+    }
+**/
+undefined/**    .layHeader .icoHeadPoint {
+        background-image: url("/static/point.png");
+        background-size: 26px auto;
+    }
+**/
+undefined/**    .icoCommentActPoint {
+        background-image: url("/static/point.png");
+        background-size: 26px auto;
+    }
+**/
+    .icoJokeCommentPoint {
+        background-image: url("/static/point.png");
+        background-size: 26px auto;
+    }
+
+undefined/**    .feedbackLogin .systemTxtPoint {
+        background-image: url(/static/point.png);
+        background-size: 26px auto;
+    }
+**/
+undefined/**    .feedbackLogin .userTxtPoint {
+        background-image: url(/static/point.png);
+        background-size: 26px auto;
+    }
+**/
+undefined/**    .settingsContact .contactPoint {
+        background-image: url(/static/point.png);
+        background-size: 26px auto;
+    }
+**/
+    /*.simpleJokeAct .actBtn:hover{background-image: url(/static/btn-bg.png); background-size: 10px auto;}*/
+    /*.footerActList .actBtn:hover{background-image: url(/static/btn-bg.png); background-size: 10px auto;}*/
+    /*.jokeDetail .jokeRelyBtn:hover{background-image: url(/static/btn-bg.png); background-size: 10px auto;}*/
+    /*.feedbackLogin .submitBtn:hover{background-image: #49baf5 url(/static/btn-bg.pngs); background-size: 10px auto;}*/
+    /*.jokeReview .jokeAct a:hover{background-image: #49baf5 url(/static/btn-bg.pngs); background-size: 10px auto;}*/
+    /*.jokeIndex .commentAct:hover{background-image: #49baf5 url(/static/comment-act.png); background-size: 11px auto;}*/
+    .moreBtn {
+        background-image: url(/static/more-btn.png);
+        background-size: 6px auto;
+    }
+
+    /*.moreBtn:hover{background-image: url(/static/more-btn-hover.png); background-size: 6px auto;}*/
+    .laySlide {
+        background-image: url(/static/slide-bg.png);
+        background-size: 228px auto;
+    }
+
+undefined/**    .settingsContact .layHeader {
+        background-image: url(/static/contact-head-center-s.jpg);
+        background-size: 320px auto;
+    }
+**/
+undefined/**    .settingsContact .layHeaderBox {
+        background-image: url(/static/contact-head-s.jpg);
+        background-size: 1100px auto;
+    }
+**/
+undefined/**    .icoMain2 {
+        background-image: url(/static/main-ico-2.png);
+        background-size: 50px auto;
+    }
+**/
+    .icoMain {
+        background-image: url(/static/main-ico.png);
+        background-size: 50px auto;
+    }
+}
+
+/****prompt txt box****/
+undefined/**.promptTxtBox {
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    padding: 15px 0;
+    box-shadow: 0 0 2px 1px #D8D8D8;
+    width: 160px;
+    border: #c3c3c3 solid 1px;
+    background: #fff;
+    text-align: center;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+**/
+undefined/**.promptTxtBox .icoSuccessPrompt {
+    width: 27px;
+    height: 20px;
+}
+**/
+undefined/**.promptTxtBox .successTxt {
+    color: #60c13d;
+    line-height: 20px;
+}
+**/
+undefined/**.promptTxtBox .icoFailPrompt {
+    width: 27px;
+    height: 20px;
+}
+**/
+undefined/**.promptTxtBox .failTxt {
+    color: #8a8a8a;
+    line-height: 20px;
+}
+**/
+/****pop box****/
+.popBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    z-index: 200;
+}
+
+.popBox .wrap {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.36;
+}
+
+.popBox .actBox {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+/****joke select****/
+.jokeSelect .popActList {
+    padding: 13px 0 0 3px;
+}
+
+.jokeSelect .subPopAct {
+    float: left;
+}
+
+.jokeSelect .subPopActLink {
+    display: block;
+    margin: 0 0 18px 9px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 66px;
+    height: 66px;
+    text-align: center;
+}
+
+/*.jokeSelect .subPopActLink:hover{background: #eee;}*/
+.jokeSelect .popActIco {
+    display: block;
+    height: 41px;
+}
+
+.jokeSelect .popActTxt {
+    display: block;
+    color: #787878;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.jokeSelect .icoPopSina {
+    width: 30px;
+    height: 100%;
+}
+
+.jokeSelect .icoPopTencent {
+    width: 24px;
+    height: 100%;
+}
+
+undefined/**.jokeSelect .icoPopWXFriend {
+    width: 30px;
+    height: 100%;
+}
+**/
+undefined/**.jokeSelect .icoPopWX {
+    width: 27px;
+    height: 100%;
+}
+**/
+.jokeSelect .icoPopQzone {
+    width: 37px;
+    height: 100%;
+}
+
+undefined/**.jokeSelect .icoPopRenRen {
+    width: 36px;
+    height: 100%;
+}
+**/
+undefined/**.jokeSelect .icoPopCopy {
+    width: 25px;
+    height: 100%;
+}
+**/
+.jokeSelect .popActBtn {
+    padding: 0 20px 5px;
+}
+
+/*****logout box****/
+undefined/**.logoutPopBox .actBox .logoutTxt {
+    padding: 15px 0 18px;
+    text-align: center;
+    color: #787878;
+    font-size: 12px;
+}
+**/
+undefined/**.logoutPopBox .actBox .popActBtn {
+    padding: 0 35px 20px;
+}
+**/
+/****pop box btn****/
+.popBox .popActBtn {
+    padding: 7px 35px 20px;
+}
+
+.popBox .popAcBlueBtn, .popBox .popAcRedBtn {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.popBox .popAcBlueBtn {
+    background: #49baf5;
+    border: #6dc8f7 solid 1px;
+}
+
+.popBox .popAcRedBtn {
+    background: #f54961;
+    border: #f76d81 solid 1px;
+}
+
+/****header****/
+.layHeader .headerTxtBox {
+    text-align: center;
+    border-bottom: 1px solid #a7d8f8;
+    position: relative;
+}
+
+.layHeader .headerTxt {
+    padding: 10px 0;
+}
+
+.layHeader .headerRabbit {
+    width: 38px;
+    height: 44px;
+    vertical-align: top;
+}
+
+.layHeader .headerActLeft {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 36px;
+    height: 38px;
+}
+
+.layHeader .headerActTop {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 38px;
+    height: 42px;
+}
+
+.headerActLeft {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 36px;
+    height: 38px;
+}
+
+/*add by me*/
+/****head tab****/
+undefined/**.layHeader .subHeadTab {
+    width: 33.3%;
+    font-size: 13px;
+    line-height: 24px;
+    position: relative;
+}
+**/
+undefined/**.layHeader .headTabClick {
+    display: none;
+    width: 100%;
+    border-top: 2px solid #229eee;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    height: 5px;
+}
+**/
+undefined/**.layHeader .jokePass .headTabClick, .layHeader .jokeAudit .headTabClick, .layHeader .jokeFail .headTabClick, .layHeader .myCommentOn .headTabClick, .layHeader .relyMyCommentOn .headTabClick, .layHeader .chartsDay .headTabClick, .layHeader .chartsWeek .headTabClick, .layHeader .chartsComment .headTabClick {
+    display: inline-block;
+}
+**/
+/*joke*/
+undefined/**.layHeader .icoJokePass, .layHeader .icoJokeAudit, .layHeader .icoJokeFail {
+    width: 18px;
+    height: 24px;
+}
+**/
+undefined/**.layHeader .jokePass, .layHeader .jokeAudit, .layHeader .jokeFail {
+    color: #229eee;
+}
+**/
+/*comment*/
+undefined/**.layHeader .icoMyComment, .layHeader .icoRelyMyComment {
+    width: 20px;
+    height: 24px;
+}
+**/
+undefined/**.layHeader .myCommentOn, .layHeader .relyMyCommentOn {
+    color: #229eee;
+}
+**/
+/*charts*/
+undefined/**.layHeader .icoDayCharts, .layHeader .icoWeekCharts, .layHeader .icoCommentCharts {
+    width: 25px;
+    height: 24px;
+}
+**/
+undefined/**.layHeader .chartsDay, .layHeader .chartsWeek, .layHeader .chartsComment {
+    color: #229eee;
+}
+**/
+/****slide****/
+.laySlide .slideTit {
+    padding: 8px 0 8px; /* position: absolute; top: 0; width: 100%;*/
+}
+
+.laySlide .slideUserImg {
+    float: left;
+    margin-left: 13px;
+}
+
+.laySlide .slideUserImg img {
+    display: block;
+    width: 29px;
+    height: 29px;
+}
+
+.laySlide .slideUserName {
+    float: left;
+    padding-left: 12px;
+    width: 5em;
+    height: 29px;
+    overflow: hidden;
+    line-height: 29px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+undefined/**.laySlide .slideUserSettings {
+    float: right;
+    margin-right: 20px;
+    width: 28px;
+    height: 28px;
+}
+**/
+/*.laySlide .slideUserSettings:hover{background-color: #E8E8E8;}*/
+.laySlide .subSlideLink {
+    width: 222px;
+    border-left: 6px solid #f3f3f3;
+    padding: 10px 0;
+}
+
+.laySlide .hover .subSlideLink /*, .laySlide .subSlideLink:hover*/
+{
+    border-left: 6px solid #229eee;
+    background-color: #e8e8e8;
+    box-shadow: -10px 4px 14px -1px #C0C0C0 inset;
+}
+
+.laySlide .subSlideLinkTxt {
+    padding-left: 44px;
+    font-size: 15px;
+}
+
+.laySlide .slideSearch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 0 15px 7px;
+}
+
+.laySlide .slideSearch input {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 2px #DADADA;
+    padding: 5px 0 5px 4px;
+    width: 209px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F5F5F5), to(#FDFDFD));
+}
+
+.laySlide .slideList {
+    z-index: 1;
+}
+
+.laySlide .subSlideList {
+    border-bottom: solid 1px #d5d5d5;
+}
+
+/****the comment of joke list and joke detail****/
+.jokeIndex {
+    margin-top: -15px;
+    background: #fff;
+}
+
+.jokeIndex .subJokeContain {
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.jokeIndex .subJokeContain:last-child {
+    border: 0;
+}
+
+.jokeIndex .jokeTit {
+    background-color: #f7f7f7;
+    height: 22px;
+    overflow: hidden;
+}
+
+.jokeIndex .jokeAuthorImg {
+    float: left;
+}
+
+.jokeIndex .jokeAuthorImg img {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.jokeIndex .jokeAuthorName {
+    float: left;
+    padding-left: 4px;
+}
+
+.jokeIndex .jokeAuthorTime {
+    float: right;
+    padding-right: 4px;
+}
+
+.jokeAuthorTitle {
+    float: left;
+    text-align: center
+}
+
+undefined.jokeIndex .jokeAuthorName/**, .jokeIndex .jokeAuthorTime .jokeAuthorTitle**/ {
+    color: #898989;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.jokeIndex .jokeContent {
+    display: block;
+    padding-top: 7px;
+}
+
+.jokeIndex .subJokeTxt {
+    font-size: 14px;
+    line-height: 18px;
+    width: 100%;
+}
+
+undefined/**.jokeIndex .subJokeImg {
+    display: block;
+    padding-top: 6px;
+}
+**/
+undefined/**.jokeIndex .subJokeImg img {
+    display: block;
+    max-width: 100px;
+    max-height: 100px;
+}
+**/
+.jokeIndex .jokeAct {
+    padding-top: 7px;
+}
+
+.jokeIndex .jokeBtn {
+    padding: 0 7px;
+    height: 26px;
+    border-radius: 13px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 26px;
+    text-align: center;
+    background: -moz-linear-gradient(top, #33ccff 0%, #49baf5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #33ccff), color-stop(100%, #49baf5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #33ccff 0%, #49baf5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #33ccff 0%, #49baf5 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #33ccff 0%, #49baf5 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ccfffd', endColorstr='#05abe0', GradientType=0); /* IE6-9 */
+    background: linear-gradient(top, #33ccff 0%, #49baf5 100%); /* W3C */
+}
+
+/*.jokeIndex .jokeBtn:hover{background: #0173a8;}*/
+.jokeIndex .jokeColdBtn {
+    float: left;
+}
+
+.jokeIndex .icoJokeCold {
+    width: 60px;
+    height: 100%;
+}
+
+.jokeIndex .jokeCollectionBtn {
+    float: right;
+    margin-left: 8px;
+}
+
+.jokeIndex .icoJokeCollection {
+    width: 15px;
+    height: 100%;
+}
+
+.jokeIndex .jokeShareBtn {
+    float: right;
+    margin-left: 8px;
+}
+
+.jokeIndex .icoJokeShare {
+    width: 18px;
+    height: 100%;
+}
+
+.jokeIndex .jokeCommentList {
+    padding-top: 4px;
+}
+
+.jokeIndex .jokeCommentBtn {
+    float: right;
+    margin-left: 8px;
+    min-width: 24px;
+    text-shadow: 1px 1px 2px #D6D6D6;
+    position: relative;
+}
+
+undefined/**.jokeIndex .jokeCommentCont {
+    margin-top: 6px;
+    padding: 3px 0 0;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+**/
+undefined/**.jokeIndex .commentAuthorImg {
+    width: 14px;
+    height: 18px;
+    float: left;
+}
+**/
+undefined/**.jokeIndex .commentAuthorCont {
+    float: right;
+    width: 100%;
+    margin-right: -20px;
+    line-height: 20px;
+}
+**/
+undefined/**.jokeIndex .commentAuthorTit {
+    color: #313131;
+    font-size: 12px;
+    padding-right: 20px;
+}
+**/
+undefined/**.jokeIndex .commentAuthorName {
+    float: left;
+}
+**/
+undefined/**.jokeIndex .commentAuthorTime {
+    float: right;
+}
+**/
+undefined/**.jokeIndex .commentAuthorTxt {
+    padding: 0 20px 0 0;
+    font-size: 12px;
+    color: #8a8a8a;
+    line-height: 14px;
+}
+**/
+undefined/**.jokeIndex .commentRelyList {
+    margin: 5px 20px 2px 0;
+    background-color: #f5ffff;
+    border: #d4f1ff solid 1px;
+    border-radius: 4px;
+}
+**/
+undefined/**.jokeIndex .subCommentRely {
+    font-size: 12px;
+    border-bottom: #d4f1ff solid 1px;
+    padding: 3px;
+}
+**/
+undefined/**.jokeIndex .subCommentRely:last-child {
+    border: 0;
+}
+**/
+undefined/**.jokeIndex .commentRelyTxt {
+    padding: 3px 0 2px;
+    color: #8a8a8a;
+    line-height: 14px;
+}
+**/
+undefined/**.jokeIndex .commentRelyTit {
+    line-height: 14px;
+}
+**/
+undefined/**.jokeIndex .commentRelyTip {
+    float: right;
+}
+**/
+undefined/**.jokeIndex .commentRelyName {
+    float: left;
+}
+**/
+undefined/**.jokeIndex .commentOn .commentActList {
+    display: block;
+}
+**/
+undefined/**.jokeIndex .commentActList {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    box-shadow: 1px 1px 2px 1px #eee;
+}
+**/
+undefined/**.jokeIndex .commentAct {
+    float: left;
+    border-left: 1px solid #89d6fe;
+    background-color: #49baf5;
+    text-align: center;
+}
+**/
+undefined/**.jokeIndex .commentAct:first-child {
+    border: 0;
+}
+**/
+undefined/**.jokeIndex .commentActTxt {
+    display: block;
+    line-height: 23px;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 11px;
+}
+**/
+undefined/**.jokeIndex .commentActIco {
+    display: block;
+    height: 25px;
+}
+**/
+undefined/**.jokeIndex .icoCommentActPoint {
+    position: absolute;
+    bottom: -9px;
+    right: -3px;
+}
+**/
+undefined/**.jokeIndex .icoCommentTop, .jokeIndex .icoCommentRely, .jokeIndex .icoCommentReport {
+    height: 25px;
+    width: 20px;
+}
+**/
+.jokeIndex .icoJokeCommentPoint {
+    position: absolute;
+    bottom: -3px;
+    right: 3px;
+}
+
+/*.jokeIndex .jokeBtn:hover .icoJokeCommentPoint{display: none;}*/
+
+/****joke list****/
+undefined/**.jokeList .icoCommentAuthor {
+    width: 100%;
+    height: 100%;
+}
+**/
+/****joke detail****/
+undefined/**.jokeDetail .subJokeImg {
+    display: block;
+    padding-top: 6px;
+}
+**/
+undefined/**.jokeDetail .subJokeImg img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 3px 2px #B8B8B8;
+}
+**/
+.jokeIndex .jokeAct {
+    padding-top: 10px;
+}
+
+undefined/**.jokeDetail .commentAuthorImg {
+    width: 29px;
+    height: 29px;
+}
+**/
+undefined/**.jokeDetail .commentAuthorImg img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+**/
+undefined/**.jokeDetail .commentAuthorCont {
+    margin-right: -35px;
+}
+**/
+undefined/**.jokeDetail .commentAuthorTit {
+    padding-right: 35px;
+}
+**/
+undefined/**.jokeDetail .commentAuthorTxt {
+    padding-right: 35px;
+    margin: 5px 0 0 0
+}
+**/
+undefined/**.jokeDetail .commentRelyList {
+    margin-right: 35px;
+}
+**/
+undefined/**.jokeDetail .jokeCommentCont {
+    padding: 10px 0 8px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #EEE;
+}
+**/
+undefined/**.jokeDetail .jokeCommentTit {
+    background-color: #f7f7f7;
+    color: #229eee;
+    font-size: 12px;
+    line-height: 20px;
+}
+**/
+undefined/**.jokeDetail .icoEliteComment {
+    float: left;
+    width: 34px;
+    height: 23px;
+}
+**/
+undefined/**.jokeDetail .icoNewComment {
+    float: left;
+    width: 34px;
+    height: 23px;
+}
+**/
+undefined/**.jokeDetail .jokeCommentList {
+    padding-top: 8px;
+}
+**/
+undefined/**.jokeDetail .jokeRelyBox {
+    padding: 1px 1px;
+    margin: 10px 60px 8px 0;
+    background-color: #49baf5;
+    height: 36px;
+    position: relative;
+}
+**/
+undefined/**.jokeDetail .jokeRelyBox input {
+    border: #fff solid 1px;
+    height: 34px;
+    width: 100%;
+    line-height: 34px;
+    border-radius: 0;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F5F5F5), to(#FDFDFD));
+}
+**/
+undefined/**.jokeDetail .jokeRelyBtn {
+    position: absolute;
+    top: 0;
+    right: -60px;
+    width: 60px;
+    height: 100%;
+    background-color: #49baf5;
+    color: #fff;
+    text-align: center;
+    line-height: 36px;
+}
+**/
+/****more btn****/
+.moreBtn {
+    display: block;
+    margin: 0 3px;
+    height: 37px;
+    text-align: center;
+    border: 1px solid #cecece;
+    box-shadow: 1px 1px 1px 0 #E7E7E7;
+    border-radius: 4px;
+}
+
+undefined/**.moreBtn .moreJokeTxt, .moreBtn .moreCommentTxt {
+    width: 96px;
+    height: 37px;
+    vertical-align: top;
+}
+**/
+.moreBtn .moreBtnTxt {
+    line-height: 37px;
+    font-size: 12px;
+    color: #A2A2A2;
+}
+
+/****footer act****/
+.footerActList {
+    background-color: #49baf5;
+    height: 44px;
+    width: 100%;
+}
+
+.footerActList .actBtn {
+    float: left;
+    padding: 13px 0 14px;
+    margin-left: -1px;
+    background: #49baf5;
+    width: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    border-left: 1px solid #89d6fe;
+}
+
+.footerActList .icoGoTop {
+    width: 15px;
+    height: 17px;
+}
+
+/****simple joke list****/
+undefined/**.simpleJokeList {
+    margin-top: -12px;
+}
+**/
+undefined/**.simpleJokeList .subJoke {
+    position: relative;
+}
+**/
+undefined/**.simpleJokeList .subJokeCont {
+    display: block;
+    padding: 12px 0 17px;
+    border-bottom: 1px solid #eee;
+}
+**/
+undefined/**.simpleJokeList .subJokeTxt {
+    display: block;
+    padding-bottom: 6px;
+    font-size: 13px;
+    line-height: 18px;
+}
+**/
+undefined/**.simpleJokeList .subJokeInfo {
+    display: block;
+}
+**/
+undefined/**.simpleJokeList .subJokeImg {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+**/
+undefined/**.simpleJokeList .subJokeImg img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+**/
+/*.simpleJokeList .subJokeTime{display: block; float: left; padding: 84px 0 0 15px; font-size: 12px; color: #898989; line-height: 16px;}*/
+undefined/**.simpleJokeList .subJokeTime {
+    font-size: 12px;
+    color: #898989;
+    line-height: 16px;
+}
+**/
+undefined/**.simpleJokeList .subJokeAct {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+**/
+undefined/**.editJoke .simpleJokeList .subJokeAct {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+}
+**/
+undefined/**.editJoke .simpleJokeList {
+    padding-bottom: 27px;
+}
+**/
+/*simple joke list act*/
+undefined/**.simpleJokeAct {
+    visibility: hidden;
+    width: 100%;
+    height: 44px;
+    background-color: #49baf5;
+    overflow: hidden;
+}
+**/
+undefined/**.simpleJokeAct .choose {
+    float: left;
+    border-left: 1px solid #89d6fe;
+    margin-left: -1px;
+}
+**/
+undefined/**.simpleJokeAct .del {
+    float: right;
+}
+**/
+undefined/**.simpleJokeAct .actBtn {
+    padding: 13px 0 14px;
+    background-color: #49baf5;
+    width: 86px;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+}
+**/
+undefined/**.simpleJokeAct .actBtn {
+    color: #fff;
+}
+**/
+undefined/**.simpleJokeAct .icoChooseAll, .simpleJokeAct .icoUnChooseAll, .simpleJokeAct .icoDelAll {
+    width: 25px;
+    height: 17px;
+}
+**/
+undefined/**.editJoke .simpleJokeAct {
+    visibility: visible;
+}
+**/
+/****simple comment list****/
+undefined/**.simpleCommentList {
+    margin-top: -11px;
+}
+**/
+undefined/**.simpleCommentList .subComment {
+    overflow: hidden;
+    padding: 6px 0 5px;
+    border-bottom: solid 1px #e8e8e8;
+}
+**/
+undefined/**.simpleCommentList .subCommentImg {
+    float: left;
+}
+**/
+undefined/**.simpleCommentList .subCommentImg img {
+    display: block;
+    width: 29px;
+    height: 29px;
+}
+**/
+undefined/**.simpleCommentList .subCommentCont {
+    margin-right: -35px;
+    width: 100%;
+    float: right;
+}
+**/
+undefined/**.simpleCommentList .subCommentCont dd, .simpleCommentList .subCommentCont dt {
+    margin-right: 35px;
+}
+**/
+undefined/**.simpleCommentList .subCommentName {
+    float: left;
+    font-size: 11px;
+    line-height: 15px;
+    color: #313131;
+}
+**/
+undefined/**.simpleCommentList .subCommentElite {
+    display: none;
+    float: right;
+    width: 20px;
+    height: 18px;
+}
+**/
+undefined/**.simpleCommentList .eliteOn .subCommentElite {
+    display: block;
+}
+**/
+undefined/**.simpleCommentList .subCommentTxt {
+    padding-bottom: 8px;
+    font-size: 11px;
+    color: #8a8a8a;
+}
+**/
+undefined/**.simpleCommentList .subRelyCommentTxt {
+    padding: 6px 8px 6px 8px;
+    background-color: #f5ffff;
+    border: solid 1px #d4f1ff;
+    border-top: 0;
+    font-size: 11px;
+}
+**/
+undefined/**.simpleCommentList .subRelyCommentTxt:first-child {
+    border-top: solid 1px #d4f1ff;
+}
+**/
+undefined/**.simpleCommentList .relyPerson {
+    color: #49baf5;
+}
+**/
+undefined/**.simpleCommentList .relyNum {
+    float: right;
+}
+**/
+undefined/**.simpleCommentList .subCommentInfo {
+    padding-top: 6px;
+    position: relative;
+}
+**/
+undefined/**.simpleCommentList .subCommentTime {
+    float: left;
+    color: #8a8a8a;
+    font-size: 11px;
+    line-height: 15px;
+}
+**/
+undefined/**.simpleCommentList .subCommentAct {
+    float: right;
+    width: 24px;
+    height: 15px;
+}
+**/
+undefined/**.simpleCommentList .commentActList {
+    display: none;
+    position: absolute;
+    top: -46px;
+    right: 3px;
+    background-color: #49baf5;
+    box-shadow: 1px 1px 2px 1px #eee;
+}
+**/
+undefined/**.simpleCommentList .commentActOn .commentActList {
+    display: block;
+}
+**/
+undefined/**.simpleCommentList .icoCommentActPoint {
+    position: absolute;
+    bottom: -9px;
+    right: -3px;
+}
+**/
+undefined/**.simpleCommentList .icoDelComment, .simpleCommentList .icoRelyComment, .simpleCommentList .icoDetailComment {
+    width: 100%;
+    height: 28px;
+}
+**/
+undefined/**.simpleCommentList .subDetailAct {
+    width: 43px;
+    border-left: 1px solid #68cafe;
+}
+**/
+undefined/**.simpleCommentList .subDetailAct:first-child {
+    border: 0;
+}
+**/
+undefined/**.simpleCommentList .subCommentActTxt {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 19px;
+}
+**/
+undefined/**.simpleCommentList .relyCommentAct {
+    display: none;
+}
+**/
+undefined/**.simpleCommentList .relyCommentOn .relyCommentAct {
+    display: inline-block;
+}
+**/
+/****wraming msg box****/
+undefined/**.warmMsgbox {
+    position: relative;
+    max-width: 281px;
+    margin: 12px auto 0;
+}
+**/
+undefined/**.warmMsgbox .msgTxt {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    color: #838383;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+}
+**/
+undefined/**.warmMsgbox img {
+    display: block;
+    width: 100%;
+}
+**/
+/****unLoign msg box*/
+undefined/**.unLoginMsgbox .unLoginImg {
+    max-width: 281px;
+    margin: 40px auto;
+}
+**/
+undefined/**.unLoginMsgbox .unLoginImg img {
+    display: block;
+    width: 100%;
+}
+**/
+.unLoginMsgbox .unLoginTxt {
+    text-align: center;
+    font-size: 13px;
+    color: #a5a5a5;
+    line-height: 18px;
+    padding-bottom: 5px;
+}
+
+.unLoginMsgbox .platformList {
+    border: 1px solid #d5d5d5;
+    border-bottom: none;
+    box-shadow: 0 -5px 8px -4px #eee inset;
+}
+
+.unLoginMsgbox .subPlatform {
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.unLoginMsgbox .subPlatLink {
+    display: block;
+    padding: 0 25px;
+    height: 49px;
+    font-size: 13px;
+    overflow: hidden;
+    line-height: 49px;
+}
+
+.unLoginMsgbox .icoSinaPlat, .unLoginMsgbox .icoTencentPlat {
+    height: 100%;
+    width: 48px;
+}
+
+/****pop box****/
+.unLoginMsgbox .actBox .platformList {
+    margin: 10px 22px 0;
+}
+
+.unLoginMsgbox .actBox {
+    padding-top: 17px;
+}
+
+.unLoginMsgbox .actBox .popActBtn {
+    padding: 22px 18px 20px;
+}
+
+/****footer share box****/
+undefined/**.footerShareBox {
+    width: 100%;
+    height: 57px;
+    border-top: 1px solid #ededed;
+}
+**/
+undefined/**.footerShareBox .subShare {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+**/
+undefined/**.footerShareBox .shareBtn {
+    text-align: left;
+}
+**/
+undefined/**.footerShareBox .shareBtnTxt {
+    line-height: 21px;
+    padding: 18px 0 18px 28px;
+}
+**/
+/*.footerShareBox .shareBtn:hover{color: #49baf5;}*/
+undefined/**.footerShareBox .shareSina, .footerShareBox .shareTencent, .footerShareBox .shareQZone, .footerShareBox .shareRenRen {
+    height: 37px;
+    width: 37px;
+    margin-top: 10px;
+}
+**/
+undefined/**.footerShareBox .shareChoose {
+    display: none;
+}
+**/
+/****home page****/
+.homePage .headerTxt {
+    width: 93px;
+    height: 44px;
+    padding: 0;
+    vertical-align: top;
+}
+
+/****joke no pic****/
+undefined/**.jokeNoPic .headerRabbit {
+    width: 48px;
+}
+**/
+/****joke review****/
+undefined/**.jokeReview .jokeTxt {
+    padding-bottom: 18px;
+    color: #505050;
+    font-size: 14px;
+    line-height: 17px;
+}
+**/
+undefined/**.jokeReview .jokeImg {
+    padding-bottom: 18px;
+}
+**/
+undefined/**.jokeReview .jokeImg img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    _width: 100%;
+    -webkit-box-shadow: 0 0 9px 3px #eaeaea;
+    -moz-box-shadow: 0 0 9px 3px #eaeaea;
+    -ms-box-shadow: 0 0 9px 3px #eaeaea;
+    box-shadow: 0 0 9px 3px #eaeaea;
+}
+**/
+undefined/**.jokeReview .layMain {
+    padding-bottom: 54px;
+}
+**/
+undefined/**.jokeReview .jokeActBox {
+    width: 100%;
+    height: 44px;
+    background-color: #49baf5;
+    text-align: center;
+}
+**/
+undefined/**.jokeReview .jokeAct {
+    float: left;
+    width: 33.3%;
+    position: relative;
+}
+**/
+undefined/**.jokeReview .jokeAct a {
+    width: 100%;
+    text-align: center;
+}
+**/
+undefined/**.jokeReview .jokeGood {
+    line-height: 44px;
+}
+**/
+undefined/**.jokeReview .jokeBad {
+    line-height: 44px;
+}
+**/
+undefined/**.jokeReview .jokeViolation {
+    line-height: 44px;
+}
+**/
+undefined/**.jokeReview .goodFace {
+    width: 26px;
+    height: 44px;
+    vertical-align: top;
+}
+**/
+undefined/**.jokeReview .badFace {
+    width: 28px;
+    height: 44px;
+    vertical-align: top;
+}
+**/
+undefined/**.jokeReview .violationFace {
+    width: 26px;
+    height: 44px;
+    vertical-align: top;
+}
+**/
+undefined/**.jokeReview .goodTxt {
+    /*width: 50px; *\/
+    color: #fff;
+}
+**/
+undefined/**.jokeReview .badTxt {
+    /*width: 47px; *\/
+    color: #fff;
+}
+**/
+undefined/**.jokeReview .violationTxt {
+    /*width: 36px; *\/
+    color: #fff;
+}
+**/
+undefined/**.jokeReview .writeTxt {
+    width: 45px;
+    color: #fff;
+}
+**/
+undefined/**.jokeReview .jokeActCount {
+    display: none;
+    position: absolute;
+    top: -19px;
+    left: 40px;
+    padding: 8px;
+    color: #fff;
+    background-color: #00A7FF;
+}
+**/
+undefined/**.jokeReview .countOn .jokeActCount {
+    display: inline-block;
+}
+**/
+/****joke Contribute****/
+undefined/**.jokeContribute .layFooter {
+    width: 100%;
+}
+**/
+undefined/**.jokeContribute .jokeContent {
+    resize: none;
+    border: 0;
+    overflow-y: visible;
+    width: 100%;
+    word-wrap: break-word;
+}
+**/
+/****cartoon List****/
+undefined/**.cartoonList .layMain {
+    padding: 15px 0 44px;
+}
+**/
+undefined/**.cartoonList .subCartoon {
+    float: left;
+    margin-bottom: 12px;
+    width: 130px;
+    margin-left: 20px;
+    background-color: #f6f6f6;
+    box-shadow: 0 1px 5px 1px #EEE8E8;
+}
+**/
+undefined/**.cartoonList .subCartoonImg {
+    background-color: #fff;
+    display: block;
+    padding: 3px 0 0;
+}
+**/
+undefined/**.cartoonList .subCartoonImg img {
+    display: block;
+    padding: 3px 0;
+    margin: 0 auto;
+    width: 124px;
+    height: 114px;
+    border: 1px solid #E4E4E4;
+}
+**/
+undefined/**.cartoonList .subCartoonTxt {
+    display: block; /*margin-top: 6px;*\/
+    padding: 0 4px 0 4px;
+    height: 20px;
+    line-height: 20px; /*border-top: 1px solid #eee;*\/
+    font-size: 12px;
+    white-space: nowrap;
+    background: #fff;
+    overflow: hidden;
+    width: 122px;
+    text-overflow: ellipsis;
+    color: #505050;
+}
+**/
+/****cartoon detail****/
+undefined/**.cartoonDetail .layMain {
+    padding: 10px 7px 50px;
+}
+**/
+undefined/**.cartoonDetail .cartoonTit {
+    padding: 0 8px 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+**/
+undefined/**.cartoonDetail .cartoonTitTxt {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+}
+**/
+undefined/**.cartoonDetail .cartoonImg {
+    padding: 4px 0 8px;
+}
+**/
+undefined/**.cartoonDetail .cartoonImg img {
+    display: block;
+    width: 100%;
+}
+**/
+/****comment dely****/
+undefined/**.commentRely .layMain {
+    padding-bottom: 41px;
+}
+**/
+undefined/**.commentRely .layFooter {
+    width: 100%;
+    text-align: right;
+    bottom: 10px;
+}
+**/
+undefined/**.commentRely .txtCount {
+    margin-right: 10px;
+    padding: 3px 6px;
+    background-color: #e6e8ec;
+    border: 1px solid #d8dbe1;
+    color: #657787;
+    border-radius: 16px;
+    font-size: 12px;
+}
+**/
+undefined/**.commentRely textarea {
+    width: 100%;
+}
+**/
+/****my collection****/
+undefined/**.myComment .subHeadTab {
+    width: 50%;
+}
+**/
+/****search list****/
+undefined/**.searchList {
+    background: #2a2a2a;
+}
+**/
+undefined/**.searchList .layHeader {
+    padding: 0 58px 5px 0;
+}
+**/
+/*.searchList .layMain{background: #fff;}*/
+undefined/**.searchList .layMain {
+    padding: 0;
+}
+**/
+undefined/**.searchList .searchInput {
+    padding: 8px 0 0 10px;
+}
+**/
+undefined/**.searchList .searchInput input {
+    padding: 5px 0 5px 4px;
+    width: 100%;
+    border: solid 1px #d3d3d3;
+    box-shadow: 0 0 6px 2px #eee inset;
+    font-size: 13px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F5F5F5), to(#FDFDFD));
+}
+**/
+undefined/**.searchRecentlyList {
+    font-size: 15px;
+}
+**/
+undefined/**.searchRecentlyTit {
+    padding: 8px 20px;
+    line-height: 17px;
+}
+**/
+undefined/**.searchRecentlyTxt {
+    width: 100%;
+    color: #8a8a8a;
+    padding: 8px 20px;
+    line-height: 17px;
+    border: #3c3c3c solid 1px;
+}
+**/
+/*.searchRecentlyTxt:hover{background-color: #474747;}*/
+
+/****user settings****/
+undefined/**.userSettings .subSettingLink {
+    padding: 11px 0 13px;
+    width: 100%;
+    border-bottom: #f1f1f1 1px solid;
+}
+**/
+/*.userSettings .subSettingLink:hover{background-color: #E8E8E8;}*/
+undefined/**.userSettings .subSettingLinkTxt {
+    padding-left: 38px;
+    font-size: 13px;
+    line-height: 21px;
+}
+**/
+undefined/**.userSettings .icoNewSetting {
+    display: none;
+    width: 28px;
+    height: 21px;
+}
+**/
+undefined/**.userSettings .newOn .icoNewSetting {
+    display: inline-block;
+}
+**/
+undefined/**.userSettings .recommendTit {
+    padding-top: 16px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #dedede;
+    position: relative;
+}
+**/
+undefined/**.recommendTitTxt {
+    background-color: #fff;
+    padding-right: 15px;
+    font-size: 13px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+**/
+undefined/**.userSettings .subRecommend {
+    padding: 8px 0 6px;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+**/
+undefined/**.userSettings .subRecommend:first-child {
+    border: 0;
+}
+**/
+undefined/**.userSettings .subRecommendCont {
+    float: right;
+    margin-right: -62px;
+    width: 100%;
+}
+**/
+undefined/**.userSettings .subRecommendImg {
+    float: left;
+}
+**/
+undefined/**.userSettings .subRecommendImg img {
+    display: block;
+    margin-left: 2px;
+    width: 46px;
+    height: 46px;
+}
+**/
+undefined/**.userSettings .subRecommendTit {
+    padding-right: 62px;
+    line-height: 21px;
+    font-size: 13px;
+    color: #363636;
+}
+**/
+undefined/**.userSettings .subRecommendTxt {
+    color: #989898;
+    padding: 4px 82px 4px 0;
+    font-size: 12px;
+    line-height: 15px;
+    position: relative;
+}
+**/
+undefined/**.userSettings .icoDownRecommend, .userSettings .icoOpenRecommend {
+    position: absolute;
+    top: 4px;
+    right: 62px;
+    width: 20px;
+    height: 15px;
+}
+**/
+/****setting act list****/
+undefined/**.settingActList .settingActTit {
+    padding: 19px 0 2px;
+    font-size: 13px;
+    color: #8a8a8a;
+    border-bottom: solid 1px #ededed;
+}
+**/
+/*.lastSettingActList .settingActTit{padding-top: 17px;}*/
+undefined/**.settingActList .subSettingAct {
+    padding: 3px 0 4px;
+    border-bottom: solid 1px #ededed;
+}
+**/
+undefined/**.lastSettingActList .subSettingAct:last-child {
+    border: 0;
+}
+**/
+undefined/**.settingActList .settingActInfo {
+    float: left;
+    color: #3f3f3f;
+    font-size: 13px;
+}
+**/
+undefined/**.settingActList .settingActTxt {
+    line-height: 38px;
+}
+**/
+undefined/**.settingActList .settingActBtn {
+    float: right;
+    margin: 3px 0;
+    padding: 8px 0;
+    line-height: 15px;
+    width: 73px;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+}
+**/
+undefined/**.settingActList .settingActGreen {
+    background-color: #60c13d;
+}
+**/
+undefined/**.settingActList .loginOn .settingActGreen {
+    background-color: #a9a9a9;
+}
+**/
+undefined/**.settingActList .settingActBlue {
+    background-color: #49baf5;
+}
+**/
+undefined/**.settingActList .settingActImg {
+    width: 30px;
+    height: 30px;
+    margin: 4px 10px 4px 0;
+    vertical-align: top;
+}
+**/
+undefined/**.settingActList .settingActImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+**/
+/****settings account****/
+undefined/**.settingsAccount .layMain {
+    padding-top: 0;
+}
+**/
+undefined/**.settingsAccount .icoLoginSina, .settingsAccount .icoLoginTencent, .settingsAccount .icoLoginRenRen {
+    height: 38px;
+    width: 41px;
+}
+**/
+/****settings wb wx****/
+undefined/**.settingsWBWX .icoAccountSelect, .settingsWBWX .icoAccountAdd {
+    height: 15px;
+    width: 24px;
+}
+**/
+undefined/**.settingsWBWX .settingActBtnBox {
+    padding: 8px 50px 0;
+}
+**/
+undefined/**.settingsWBWX .settingActBtnBox .settingActBlue {
+    width: 100%;
+}
+**/
+/****contact us****/
+undefined/**.settingsContact .headerTxtBox {
+    border: 0;
+}
+**/
+undefined/**.settingsContact .layHeader {
+    height: 2px;
+}
+**/
+undefined/**.settingsContact .headerTxt {
+    color: #fff;
+}
+**/
+undefined/**.settingsContact .contactTit {
+    font-size: 13px;
+    line-height: 14px;
+    width: 34%;
+    float: left;
+    text-align: right;
+}
+**/
+undefined/**.settingsContact .contactCont {
+    width: 62%;
+    float: right;
+    border-left: solid 1px #c7c7c7;
+    color: #8a8a8a;
+    position: relative;
+}
+**/
+undefined/**.settingsContact .contactTxt {
+    line-height: 14px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+**/
+undefined/**.settingsContact .contactTxt:last-child {
+    padding-bottom: 0;
+}
+**/
+undefined/**.settingsContact .icoContactQQ, .settingsContact .icoContactMail, .settingsContact .icoContactWeb {
+    width: 35px;
+    height: 14px;
+}
+**/
+undefined/**.settingsContact .contactPoint {
+    width: 11px;
+    height: 17px;
+    position: absolute;
+    top: 0;
+    left: -8px;
+}
+**/
+/****notice list****/
+undefined/**.noticeList .subNoticeLink {
+    width: 100%;
+    padding: 9px 0 6px;
+    border-bottom: solid 1px #ededed;
+}
+**/
+/*.noticeList .subNoticeLink:hover{background: #eee;}*/
+undefined/**.noticeList .subNoticeTxt {
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 16px;
+    vertical-align: top;
+}
+**/
+undefined/**.noticeList .subNoticeCircle {
+    margin: 7px 0 0 9px;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    border-radius: 20px;
+    background: #505050;
+    border: 2px solid #505050;
+    vertical-align: top;
+}
+**/
+/****notice detail****/
+undefined/**.noticeDetail .noticeImg {
+    background-color: #21a3ef;
+}
+**/
+undefined/**.noticeDetail .noticeImg img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+**/
+undefined/**.noticeDetail .noticeTxt {
+    padding-top: 15px;
+    font-size: 13px;
+    line-height: 20px;
+}
+**/
+/****share app****/
+undefined/**.shareApp .layMain {
+    padding-bottom: 41px;
+}
+**/
+undefined/**.shareApp .layFooter {
+    width: 100%;
+    text-align: right;
+    bottom: 10px;
+}
+**/
+undefined/**.shareApp .txtCount {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 6px;
+    background-color: #49baf5;
+    border: 1px solid #ceedfc;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 12px;
+}
+**/
+undefined/**.shareApp .icoCountClose {
+    width: 18px;
+    height: 18px
+}
+**/
+undefined/**.shareApp textarea {
+    width: 100%;
+}
+**/
+/****feedback****/
+undefined/**.feedback .feedbackTit {
+    padding-bottom: 5px;
+    line-height: 19px;
+    font-size: 13px;
+}
+**/
+undefined/**.feedback textarea {
+    height: 147px;
+}
+**/
+undefined/**.feedback input {
+    padding: 5px 0;
+}
+**/
+undefined/**.feedback textarea, .feedback input {
+    width: 100%;
+    padding-left: 4px;
+    margin: 0 6px 0 -4px;
+    border: solid 1px #d3d3d3;
+    box-shadow: 0 0 6px 2px #eee inset;
+    font-size: 13px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F5F5F5), to(#FDFDFD));
+}
+**/
+/****feedback login*****/
+undefined/**.feedbackLogin .layMain {
+    padding-top: 0;
+}
+**/
+undefined/**.feedbackLogin .systemTalk, .userTalk {
+    padding-top: 18px;
+}
+**/
+undefined/**.feedbackLogin .systemImg {
+    width: 29px;
+    height: 29px;
+    float: left;
+}
+**/
+undefined/**.feedbackLogin .systemImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+**/
+undefined/**.feedbackLogin .systemContent {
+    float: right;
+    width: 100%;
+    padding-left: 13px;
+    margin-right: -46px;
+    position: relative;
+}
+**/
+undefined/**.feedbackLogin .systemTxt {
+    padding: 7px 10px;
+    margin-right: 46px;
+    border: solid 1px #d3d3d3;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 #EEE;
+    line-height: 20px;
+    color: #424242;
+}
+**/
+undefined/**.feedbackLogin .userImg {
+    width: 29px;
+    height: 29px;
+    float: right;
+}
+**/
+undefined/**.feedbackLogin .userImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+**/
+undefined/**.feedbackLogin .userContent {
+    float: left;
+    width: 100%;
+    padding-right: 13px;
+    margin-left: -46px;
+    position: relative;
+    text-align: right;
+}
+**/
+undefined/**.feedbackLogin .userTxt {
+    padding: 7px 10px;
+    margin-left: 46px;
+    border: solid 1px #d0edf6;
+    border-radius: 4px;
+    background: #e3fbff;
+    box-shadow: 0 1px 4px 0 #EEE;
+    line-height: 20px;
+    color: #424242;
+    text-align: left;
+}
+**/
+undefined/**.feedbackLogin .systemTxtPoint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+}
+**/
+undefined/**.feedbackLogin .userTxtPoint {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+}
+**/
+undefined/**.feedbackLogin .submitBox {
+    background: #48b9f3;
+    width: 100%;
+}
+**/
+undefined/**.feedbackLogin .submitInput {
+    float: left;
+    width: 100%;
+    margin-left: -80px;
+}
+**/
+undefined/**.feedbackLogin .submitInputBox {
+    padding: 5px 0 5px 90px;
+}
+**/
+undefined/**.feedbackLogin .submitInput input {
+    padding: 5px 0 5px 4px;
+    margin-left: -4px;
+    font-size: 12px;
+    color: #646464;
+    border: #ffffff 1px;
+    width: 100%;
+    box-shadow: 0 0 6px 2px #eee inset;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F5F5F5), to(#FDFDFD));
+}
+**/
+undefined/**.feedbackLogin .submitBtn {
+    float: right;
+    width: 78px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+**/
+undefined/**.feedbackLogin .icoSubmitBtn {
+    width: 25px;
+    height: 100%;
+}
+**/.dolphin{
+       background: url("/static/logo.png") no-repeat 0 0;
+}

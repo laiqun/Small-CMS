@@ -1,0 +1,32 @@
+.icon {
+    background: url(/static/icon.png) no-repeat;
+    background-size: 630px auto;
+    -webkit-background-size: 630px auto
+}
+.icon2 {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
+.icon2-29 {
+    background-position: -280px -40px
+}
+.icon2-32 {
+    background-position: -140px -60px
+}
+
+.icon2-33 {
+    background-position: -160px -60px
+}
+.icon2-37 {
+    background-position: -240px -60px
+}
+
+.icon3 {
+    width: 25px;
+    height: 25px;
+    display: inline-block
+}
+.icon3-3 {
+    background-position: -400px 0
+}

@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>
+            blog list
+    </title>
+</head>
+<body>
+{% for post in posts %}
+<h2>[{{post.category}}]{{post.outline}}</h2>
+<p>{{post.timestamp}}</p>
+<p>{{post.body}}</p>
+</body>
+</html>

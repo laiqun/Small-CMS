@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://m.lengxiaohua.cn/touch.php?a=add&m=draft -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="dream z">
+    <meta charset="utf-8">
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=http://lengxiaohua.cn/.html">
+    <meta name="apple-itunes-app" content="app-id=456823345">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>冷笑话精选 分享身边的爆笑事儿</title>
+    <meta name="keywords" content="冷笑话精选,冷笑话,笑话,冷笑话大全,幽默,段子,糗事,冷气,搞笑">
+    <meta name="description" content="每日奉送最新、最劲爆的冷笑话，绝对是你居家旅行，行走江湖的必备猛药！期待各路高手前来分享冷笑话，我们鼓励投稿，善待你的每一个评论，速来报道吧。">
+    <link href="/static/global.css" rel="stylesheet" type="text/css">
+    <meta property="wb:webmaster" content="21ea5cf69932c256">
+</head>
+<body>
+<script>
+var gp={
+	location:'draftAdd'
+}
+</script>
+<div class="layout jokeContribute" id="jokeContribute">
+    <form action="" method="post" enctype="multipart/form-data" id="form_draft">
+        <div class="layHeader">
+            <input type="hidden" name="dosubmit" value="1">
+            <a  onclick="document.getElementById('form_draft').submit()" class="headerActTop icoHeadAct icoHeadContribute" data-islogin="1" data-confirm="true"></a>
+            <a href="http://www.xungongming.cn/" class="headerActLeft icoHeadAct icoHeadBack" title="返回上一页"></a>
+            <h1>
+                <p class="headerTxtBox titTxt"><span class="headerTxt">用户投稿</span></p>
+            </h1>
+        </div>
+        <div class="layMain">
+         <!--这里不要类别了,参考糗事和冷笑话精选,采用多站点形式 form.category form.outline -->
+         {{ form.outline }}
+            {{ form.body }}
+        </div>
+        <div class="layFooter">
+            <div><input type="file" name="imgfile" value="选择图片">
+            <span>选择类别: </span>{{ form.category }}<!--以后类别也去掉-->
+            </div>
+        </div>
+        <input type="hidden" name="share_sinawb" id="share_sinawb" value="0">
+        <input type="hidden" name="share_qqwb" id="share_qqwb" value="0"><input type="hidden" name="share_qzone" id="share_qzone" value="0">
+        <input type="hidden" name="share_rr" id="share_rr" value="0">
+    </form>
+</div>
+<input type="hidden" name="__hash__" value="0774d5583ff56ef23eb763c11f6411cb_ce70e69f8d2e66b01ba419c1cd4e56f5">
+<div class="popBox jokeSelect" id="share_popbox" style="display:none"><!-- share pop box --><div class="wrap"></div>
+    <div class="actBox">
+        <ul class="popActList clearfix">
+            <li class="subPopAct"><a href="javascript:void(0)" data-sinawb-share="true" class="subPopActLink"><span class="popActIco"><span class="icoPopBox icoPopSina"></span></span><span class="popActTxt">新浪微博</span></a></li>
+            <li class="subPopAct"><a href="javascript:void(0)" data-txwb-share="true" class="subPopActLink"><span class="popActIco"><span class="icoPopBox icoPopTencent"></span></span><span class="popActTxt">腾讯微博</span></a></li><li class="subPopAct"><a href="javascript:void(0)" data-qzone-share="true" class="subPopActLink"><span class="popActIco"><span class="icoPopBox icoPopQzone"></span></span><span class="popActTxt">QQ空间</span></a></li>
+            <!--<li class="subPopAct"><a href="javascript:void(0)"  data-rr-share=true class="subPopActLink"><span class="popActIco"><span class="icoPopBox icoPopRenRen"></span></span><span class="popActTxt">人人网</span></a></li>-->
+        </ul>
+        <div class="popActBtn"><a href="javascript:void(0)" data-share-close="true" class="popAcBlueBtn">取消</a></div>
+    </div>
+</div>
+<div class="popBox unLoginMsgbox" id="login_popbox" style="display: none;">
+    <div class="wrap"></div>
+    <div class="actBox"><p class="unLoginTxt">选择以下账号快速登陆</p>
+        <ul class="platformList">
+            <li class="subPlatform"><a href="http://m.lengxiaohua.cn/touch.php?a=login_sina&m=login" class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoSinaPlat"></span>新浪微博账号登陆</a></li><li class="subPlatform"><a href="http://m.lengxiaohua.cn/touch.php?a=login_qq&m=login" class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoTencentPlat"></span>QQ账号登陆</a></li>
+        </ul>
+        <div class="popActBtn"><a href="javascript:void(0)" data-login-close="true" class="popAcRedBtn">取消</a>
+        </div>
+    </div>
+</div><!-- login pop box -->
+<div style="display:none;"><script src="./冷笑话投稿_files/stat.php" language="JavaScript"></script><script src="./冷笑话投稿_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=5583949" target="_blank" title="站长统计">站长统计</a></div><script type="text/javascript">
+	/*移动端悬浮*/
+	var cpro_id = "u1695490";
+	</script><script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script><script src="./冷笑话投稿_files/zepto.js"></script><script src="./冷笑话投稿_files/global.js"></script><script src="./冷笑话投稿_files/jquery.scrollLoading.min.js"></script><script src="./冷笑话投稿_files/touch.js"></script></body></html>

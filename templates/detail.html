@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://m.lengxiaohua.cn/?a=detail&m=index&id=109858 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% load i18n %}
+    <meta name="author" content="dream z">
+    <meta charset="utf-8">
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=http://lengxiaohua.cn/.html">
+    <meta name="apple-itunes-app" content="app-id=456823345">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>共鸣详情</title>
+    <meta name="keywords" content="共鸣,情感共鸣,感觉,心理医生">
+    <meta name="description"
+          content="">
+    <link href="/static/global.css" rel="stylesheet" type="text/css">
+    <meta property="wb:webmaster" content="21ea5cf69932c256">
+</head>
+<body>
+<script>
+    var gp = {
+        location: 'detail'
+    }
+</script>
+<!-- layout start -->
+<div class="layout " id="layout" alt="冷笑话精选 分享身边的爆笑事儿">
+    <!-- head start -->
+    <div class="layHeader">
+        <a href="http://127.0.0.1:8000" class="headerActLeft icoHeadAct icoHeadBack"></a>
+
+        <h1><p class="headerTxtBox titTxt"><span class="headerRabbit icoRabbit icoRabbit1"></span><span
+                class="headerTxt">笑话详情</span></p></h1>
+    </div>
+    <!-- head end -->
+    <!-- main content start -->
+    <div class="layMain">
+        <!-- joke list  start-->
+        <ul class="jokeIndex jokeDetail">
+            <li class="subJokeContain" data-joke-id="{{ post.id }}">
+                <div class="jokeTit">
+                    <div class="jokeAuthorImg"><img src="./冷笑话单个和评论_files/lengicon.jpg" alt="一抹茶香"></div>
+                    <div class="jokeAuthorName">{{ post.user_id }}</div>
+                    <div class="jokeAuthorTitle">&nbsp;[{{ post.get_category_display }}]&nbsp;{{ post.outline }}</div>
+                    <div class="jokeAuthorTime">{{ post.timestamp |timesince }}</div>
+                </div>
+                <!-- author info -->
+                <a href="javascript:void(0)" class="jokeContent">
+							<span class="subJokeTxt" data-joke-cont="{{ post.body }}">
+                                {{ post.body }}
+                            </span>
+                    {% if post.photo %}
+                        <span class="subJokeImg">
+
+<img title="" alt=""
+     src="/static/default_load_img.gif"
+     data-url="/media/{{ post.photo }}"
+     data-lazy="true"
+     data-content-img="/media/{{ post.photo }}"><!--分享时使用的内容  分享时应该使用完整的url-->
+</span>
+                    {% endif %}
+                </a><!-- joke content -->
+                <div class="jokeAct clearfix">
+                    <a href="javascript:void(0)" class="jokeColdBtn jokeBtn" data-cold="true"><span
+                            class="icoJokeAct icoJokeCold"></span><span data-cold-num="true">{{ post.laud_num }}</span></a><!-- 好冷 -->
+                    <!-- <a href="javascript:void(0)" class="jokeCommentBtn jokeBtn" data-comm-num=true><span class="icoJokeCommentPoint"></span>4</a> -->
+                    <a href="javascript:void(0)" class="jokeShareBtn jokeBtn" data-share="false"
+                       data-share-href="http://m.lengxiaohua.cn/109858.html"><span
+                            class="icoJokeAct icoJokeShare"></span></a><!-- 分享 -->
+                    {% if post.collect %}
+                        <a href="javascript:void(0)" data-collect="true"
+                           class="jokeCollectionBtn jokeBtn collectionOn "><span
+                                class="icoJokeAct icoJokeCollection"></span></a><!-- 收藏 由collectionOn控制 -->
+                    {% else %}
+                        <a href="javascript:void(0)" data-collect="true" class="jokeCollectionBtn jokeBtn "><span
+                                class="icoJokeAct icoJokeCollection"></span></a><!-- 收藏 由collectionOn控制 -->
+                    {% endif %}
+                </div>
+                <div class="jokeRelyBox">
+                    <form action="" method="post" id="form_comment">
+                        <input type="text" name="content" data-comm-cont="true" data-comm-input="true/">
+                        <input type="hidden" name="blogid" value="{{ post.id }}"
+                        <!--这里加入ajax  先暂时不用ajax 然后再删掉没用到的内容-->
+                        <a onclick="document.getElementById('form_comment').submit()" href="javascript:void(0)"
+                           class="jokeRelyBtn" data-comm-rel="true">评论</a>
+                    </form>
+                </div>
+                <div data-marrow="true" id="marrow">
+                    <!-- 精华评论 -->
+                    <!-- 最新评论 -->
+                    <dl class="jokeCommentList" data-normal="true">
+                        <dt class="jokeCommentTit"><span class="icoJokeAct icoNewComment"></span>最新评论</dt>
+                        {% for comment in comments %}  <!--评论的赞 回复 改成灰色 避免喧宾夺主-->   <!--过滤掉有母字段的-->
+                            <dd class="jokeCommentCont clearfix" data-comm-cont="true" data-comm-id="{{ comment.id }}">
+                                <div class="commentAuthorImg"><img src="./冷笑话单个和评论_files/50"></div>
+                                <!-- joke author img -->
+                                <div class="commentAuthorCont">
+                                    <div class="commentAuthorTit clearfix">
+                                        <span class="commentAuthorName"
+                                              data-comm-author="true">{{ comment.user_id }}</span>
+                                        <span class="commentAuthorTime">{{ comment.timestamp|timesince }}</span>
+                                    </div>
+                                    <!-- joke author info  -->
+                                    <p class="commentAuthorTxt">{{ comment.body }}</p><!-- joke comment -->
+
+                                </div>
+                                <!-- 评论操作由commentOn 控制 -->
+
+                                <div class="commentActList ">
+                                    <a href="javascript:void(0)" class="commentAct" data-top="true">
+                                        <span class="commentActIco clearfix"><span
+                                                class="icoJokeAct icoCommentTop"></span></span>
+                                        <span class="commentActTxt" data-top-num="true">{{ comment.laud_num }}顶</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="commentAct" data-floorcomm-box="true">
+                                        <span class="commentActIco clearfix"><span
+                                                class="icoJokeAct icoCommentRely"></span></span>
+                                        <span class="commentActTxt">回复</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="commentAct" data-report="true">
+                                        <span class="commentActIco clearfix"><span
+                                                class="icoJokeAct icoCommentReport"></span></span>
+                                        <span class="commentActTxt">举报</span>
+                                    </a>
+
+                                    <div class="icoCommentActPoint"></div>
+                                </div>
+                                <!--找到属于该评论的母字段-->
+                                <!--commet.comment_set.all    加入按时间排列-->
+                                {% for floorcomment in comment.get_comments %}   <!--加入按时间排列-->
+                                    {{ floorcomment.body }}
+                                {% endfor %}
+                            </dd>
+                        {% endfor %}
+                    </dl>
+                </div>
+            </li>
+            <!-- joke detail -->                </ul>
+        <!-- joke list end-->
+        <a class="moreBtn" data-comm-more="0"><span class="moreBtnTxt">挖掘更多神评论</span></a><!-- more -->
+    </div>
+    <!-- main content end -->
+    <!-- footer_banner -->
+    <!-- footer start -->
+    <div class="layFooter footerActList clearfix" data-footer-banner="true">
+        <a href="javascript:void(0)" class="actBtn" data-login="0">登录</a>
+       <!-- <a href="http://dl.lengxiaohua.cn/static/lxh/lxh_feibo.apk" target="_blank" class="actBtn" data-appld="ture">客户端</a>-->
+        <input type="hidden" id="app_android" value="http://dl.lengxiaohua.cn/static/lxh/lxh_feibo.apk">
+        <input type="hidden" id="app_ios" value="http://itunes.apple.com/cn/app/id456823345?mt=8">
+        <a href="javascript:void(0)" class="actBtn" data-gotop="ture" id="go_top">返回顶部<span
+                class="icoJokeAct icoGoTop"></span></a>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- layout end -->
+
+<!-- layout start 评论回复框-->
+<div class="layout commentRely" style="display:none" id="commRelyBox">
+    <!-- head start -->
+    <div class="layHeader">
+        <a href="127.0.0.1:8000" class="headerActLeft icoHeadAct icoHeadBack" title="返回上一页"></a>
+        <a href="javascript:void(0)" data-floorcomm-rel="true" class="headerActTop icoHeadAct icoHeadContribute"
+           title="发表评论"></a>
+
+        <h1><p class="headerTxtBox titTxt"><span class="headerTxt">回复评论</span></p></h1>
+    </div>
+    <!-- head end -->
+    <!-- main content start -->
+    <div class="layMain">
+				<textarea style="width:100%;" onpropertychange="this.style.posHeight=this.scrollHeight" id="textarea"
+                          data-floorcomm-cont="true" onfocus="textarea.style.posHeight=this.scrollHeight"
+                          placeholder="回复冷先森：">
+
+                </textarea>
+    </div>
+    <!-- main content end -->
+    <!-- footer start -->
+    <div class="layFooter">
+        <em class="txtCount" data-cont-rest="true">140</em>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- layout end -->
+
+<div class="popBox jokeSelect" id="share_popbox" style="display:none"><!-- share pop box -->
+    <div class="wrap"></div>
+    <div class="actBox">
+        <ul class="popActList clearfix">
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-sinawb-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopSina"></span></span>
+                    <span class="popActTxt">新浪微博</span>
+                </a>
+            </li>
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-txwb-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopTencent"></span></span>
+                    <span class="popActTxt">腾讯微博</span>
+                </a>
+            </li>
+            <li class="subPopAct">
+                <a href="javascript:void(0)" data-qzone-share="true" class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopQzone"></span></span>
+                    <span class="popActTxt">QQ空间</span>
+                </a>
+            </li>
+            <!--
+            <li class="subPopAct">
+                <a href="javascript:void(0)"  data-rr-share=true class="subPopActLink">
+                    <span class="popActIco"><span class="icoPopBox icoPopRenRen"></span></span>
+                    <span class="popActTxt">人人网</span>
+                </a>
+            </li>
+             -->
+        </ul>
+        <div class="popActBtn">
+            <a href="javascript:void(0)" data-share-close="true" class="popAcBlueBtn">取消</a>
+        </div>
+    </div>
+</div>
+<div class="popBox unLoginMsgbox" id="login_popbox" style="display: none;">
+    <div class="wrap"></div>
+    <div class="actBox">
+        <p class="unLoginTxt">选择以下账号快速登陆</p>
+        <ul class="platformList">
+            <li class="subPlatform">
+                <a href="http://m.lengxiaohua.cn/touch.php?a=login_sina&m=login"
+                   class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoSinaPlat"></span>新浪微博账号登陆</a>
+            </li>
+            <li class="subPlatform">
+                <a href="http://m.lengxiaohua.cn/touch.php?a=login_qq&m=login"
+                   class="subPlatLink icoMain icoPlatLink"><span class="icoMain icoTencentPlat"></span>QQ账号登陆</a>
+            </li>
+        </ul>
+        <div class="popActBtn">
+            <a href="javascript:void(0)" data-login-close="true" class="popAcRedBtn">取消</a>
+        </div>
+    </div>
+</div>
+<!-- login pop box -->
+<div style="display:none;">
+    <script src="./冷笑话单个和评论_files/stat.php" language="JavaScript"></script>
+    <script src="./冷笑话单个和评论_files/core.php" charset="utf-8" type="text/javascript"></script>
+    <a href="http://www.cnzz.com/stat/website.php?web_id=5583949" target="_blank" title="站长统计">站长统计</a></div>
+<script type="text/javascript">
+    /*移动端悬浮*/
+    var cpro_id = "u1695490";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>
+
+
+<script src="/static/zepto.js"></script>
+<script src="/static/global.js"></script>
+<script src="/static/jquery.scrollLoading.min.js"></script>
+<script src="/static/touch.js"></script>
+</body>
+</html>
