@@ -26,6 +26,8 @@ logger = logging.getLogger('mylogger')
 
 
 def blogall(request, top=False, my=False, collect=False,search=False,cont='',loginflag=False):  # 和top完全一样,加个参数融合成一个
+    if request.user.is_authenticated():
+       loginflag=True
     if request.method == 'POST' and collect == False:
         blogid = int(request.POST.get('blog_id', False))
         blog = BlogPost.objects.get(id=blogid)
