@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe064bf-b6bd-4743-92de-2a83ed84e497" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listall.html" afterPath="$PROJECT_DIR$/templates/listall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/touch.js" afterPath="$PROJECT_DIR$/static/touch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Small-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,14 +45,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listall.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/listall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42520612">
+            <state vertical-scroll-proportion="-5.9180326">
               <caret line="103" column="81" selection-start-line="103" selection-start-column="81" selection-end-line="103" selection-end-column="81" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="touch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/touch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.48957056">
+              <caret line="576" column="32" selection-start-line="576" selection-start-column="32" selection-end-line="576" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +97,7 @@
       <list>
         <option value="$PROJECT_DIR$/recall/views.py" />
         <option value="$PROJECT_DIR$/templates/listall.html" />
+        <option value="$PROJECT_DIR$/static/touch.js" />
       </list>
     </option>
   </component>
@@ -97,10 +109,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1064" />
+    <option name="x" value="-206" />
+    <option name="width" value="1753" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -155,6 +166,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Small-CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Small-CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,10 +269,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
+    <frame x="-206" y="0" width="1753" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27665707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -310,11 +335,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42520612">
+        <state vertical-scroll-proportion="-5.9180326">
           <caret line="103" column="81" selection-start-line="103" selection-start-column="81" selection-end-line="103" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/touch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48957056">
+          <caret line="576" column="32" selection-start-line="576" selection-start-column="32" selection-end-line="576" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

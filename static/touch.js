@@ -573,7 +573,8 @@
 						return false;
 					});
 				}else{
-					ming.fullMsg.msg().html('已登�?').showAndAutoHide();
+					//ming.fullMsg.msg().html('已登�?').showAndAutoHide();
+					return true;
 				}
 				return false;
 			});
