@@ -101,7 +101,7 @@
         <div class="layHeader">
             <a href="http://m.lengxiaohua.cn/#" class="headerActLeft icoHeadAct icoHeadSlide" title="菜单列表"
                id="pointer"></a>
-            <a href="http://www.xungongming.cn/addblog" data-add="{% if login %} 1{% else %} 0 {% endif %}" class="headerActTop icoHeadAct icoHeadEdit" title="我要投稿"></a>
+            <a href="http://www.xungongming.cn/addblog" data-add="{% if loginflag %} 1{% else %} 0 {% endif %}" class="headerActTop icoHeadAct icoHeadEdit" title="我要投稿"></a>
 
             <h1><p class="headerTxtBox titTxt"><span class="headerRabbit dolphin "style="height:55px;"></span><!--logo  icoRabbit2 icoRabbit-->
                 <span class="headerTxt"></span></p></h1>
@@ -168,7 +168,7 @@
         <!-- main content end -->
         <!-- 页脚底部   登录 客户端  返回顶部   footer start -->
         <div class="layFooter footerActList clearfix" data-footer-banner="true">
-            <a href="javascript:void(0)" class="actBtn" data-login="{% if login %} 1{% else %} 0 {% endif %}" >登录</a>
+            <a href="javascript:void(0)" class="actBtn" data-login="{% if loginflag %} 1{% else %} 0 {% endif %}" >登录</a>
             <input type="hidden" id="app_android" value="http://xxx.apk">
             <input type="hidden" id="app_ios" value="http://itunes.apple.com/cn/app/id456823345?mt=8">
             <a href="javascript:void(0)" class="actBtn" data-gotop="ture" id="go_top">返回顶部<span
