@@ -25,7 +25,7 @@ import logging
 logger = logging.getLogger('mylogger')
 
 
-def blogall(request, top=False, my=False, collect=False,search=False,cont='',login=False):  # 和top完全一样,加个参数融合成一个
+def blogall(request, top=False, my=False, collect=False,search=False,cont='',loginflag=False):  # 和top完全一样,加个参数融合成一个
     if request.method == 'POST' and collect == False:
         blogid = int(request.POST.get('blog_id', False))
         blog = BlogPost.objects.get(id=blogid)
@@ -79,15 +79,15 @@ def blogall(request, top=False, my=False, collect=False,search=False,cont='',log
                         post.collect = True
                 if collect == True:
                     return render_to_response('listall.html',
-                                              {'posts': posts, 'postsall_collect': postsall_collect, 'collect': True})
+                                              {'posts': posts, 'postsall_collect': postsall_collect, 'collect': True,'loginflag':loginflag})
                 else:
                     return render_to_response('listall.html',
-                                              {'posts': posts, 'postsall_collect': postsall_collect, 'collect': False})
+                                              {'posts': posts, 'postsall_collect': postsall_collect, 'collect': False,'loginflag':loginflag})
             except AttributeError:
                 if collect == True:
-                    return render_to_response('listall.html', {'posts': posts, 'collect': True})
+                    return render_to_response('listall.html', {'posts': posts, 'collect': True,'loginflag':loginflag})
                 else:
-                    return render_to_response('listall.html', {'posts': posts, 'collect': False})
+                    return render_to_response('listall.html', {'posts': posts, 'collect': False,'loginflag':loginflag})
         else:
             try:  # 请求更多,则json
                 posts = paginator.page(more)
@@ -318,4 +318,4 @@ def qqlogin(request):
     if person is not None:
         login(request, person)
 #    return HttpResponseRedirect('/') 
-    return blogall(request,login=True)
+    return blogall(request,loginflag=True)
