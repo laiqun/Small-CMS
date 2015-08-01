@@ -1,6 +1,6 @@
 *.pyc
 *.bak
 *.swp
-
+.idea/
 settings.py
 
